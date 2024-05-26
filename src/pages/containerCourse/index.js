@@ -30,7 +30,7 @@ function ContainerCourse() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('course_title')}>
-                <h1>
+                <h1 className={cx('course_title-h1')} >
                     {nameCourse}_{nameGv} (CQ_HK232) [{classCourse}]
                 </h1>
             </div>

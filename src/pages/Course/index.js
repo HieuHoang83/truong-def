@@ -177,36 +177,38 @@ function Course() {
                                     <i className="fa-solid fa-magnifying-glass "></i>
                                 </button>
                             </div>
-                            <div className={cx('sort')}>
-                                <div
-                                    className={cx('sort_content')}
-                                    onClick={() => {
-                                        setShow(!show);
-                                    }}
-                                >
-                                    {sort[0]} <i className={cx('fa-solid', 'fa-chevron-down', 'icon')}></i>
-                                </div>
-
-                                {show && type !== 'admin' && (
-                                    <div className={cx('sort__list_selection')}>
-                                        <div
-                                            className={cx('sort__item')}
-                                            value="list"
-                                            onClick={() => {
-                                                let newsort = [];
-                                                newsort[0] = sort[1];
-                                                newsort[1] = sort[0];
-                                                setSort(newsort);
-                                                setShow(!show);
-
-                                                setIscard(!isCard);
-                                            }}
-                                        >
-                                            {sort[1]}
-                                        </div>
+                            {type != 'admin' && (
+                                <div className={cx('sort')}>
+                                    <div
+                                        className={cx('sort_content')}
+                                        onClick={() => {
+                                            setShow(!show);
+                                        }}
+                                    >
+                                        {sort[0]} <i className={cx('fa-solid', 'fa-chevron-down', 'icon')}></i>
                                     </div>
-                                )}
-                            </div>
+
+                                    {show && type !== 'admin' && (
+                                        <div className={cx('sort__list_selection')}>
+                                            <div
+                                                className={cx('sort__item')}
+                                                value="list"
+                                                onClick={() => {
+                                                    let newsort = [];
+                                                    newsort[0] = sort[1];
+                                                    newsort[1] = sort[0];
+                                                    setSort(newsort);
+                                                    setShow(!show);
+
+                                                    setIscard(!isCard);
+                                                }}
+                                            >
+                                                {sort[1]}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
                             {type === 'admin' && (
                                 <div className={cx('create_content_container')}>
                                     <button
@@ -216,7 +218,7 @@ function Course() {
                                             setadd(!add);
                                         }}
                                     ></button>
-                                    <span style={{ display: 'block', marginLeft: '12px' }} onClick={() => {}}>
+                                    <span style={{ display: 'block' }} onClick={() => {}} className={cx('addcourse')}>
                                         Thêm khóa học
                                     </span>
                                 </div>

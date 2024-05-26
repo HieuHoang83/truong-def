@@ -1,7 +1,7 @@
 .list_student {
     position: relative;
     top: 80px;
-    left: 260px;
+    left: 100px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -81,7 +81,6 @@ button {
     margin-top: 20px;
 }
 table {
-    width: 1000px;
     table-layout: auto;
     position: sticky;
     top: 20px;
@@ -92,8 +91,8 @@ table th {
     color: #77b1f7;
     font-size: 15px;
 }
-th,
-td {
+.table_section th,
+.table_section td {
     border: 1px solid #a5a5a5;
     padding: 10px 20px;
     text-align: center;
@@ -149,5 +148,169 @@ table button:hover {
 
         color: red;
         background-color: transparent;
+    }
+}
+
+@media only screen and (max-width: 723px) {
+    .table th {
+        background-color: #f6f8f9;
+        color: #77b1f7;
+        font-size: 10px;
+    }
+    .sua {
+        margin-left: 0px;
+    }
+    .inputlabel {
+        font-size: 10px;
+    }
+    .iteminput {
+        font-size: 10px;
+    }
+    .table {
+        width: 100% !important;
+    }
+    .list_student {
+        left: 20px;
+        top: 30px;
+    }
+    .table_header {
+        padding: 20px 5px;
+        justify-content: flex-start;
+    }
+    .table_header p {
+        color: white;
+        font-size: 20px;
+    }
+
+    .table_section th,
+    .table_section td {
+        border: 1px solid #a5a5a5;
+        padding: 10px 5px;
+        text-align: center;
+        color: rgb(87, 80, 80);
+    }
+
+    .stt {
+        width: 5%;
+        font-size: 12px;
+    }
+    .msgv {
+        width: 10%;
+        font-size: 12px;
+    }
+    .name {
+        width: 20%;
+        font-size: 12px;
+    }
+    .faculty {
+        width: 25%;
+        font-size: 12px;
+    }
+    .delete {
+        width: 10%;
+        font-size: 12px;
+    }
+    .dataTable {
+        width: 100% !important;
+        font-size: 11px;
+    }
+    .table_header input {
+        width: 40%;
+        font-size: 11px;
+        padding: 10px;
+        margin-left: 2px;
+        margin-right: 0px;
+    }
+    .add_student {
+        padding: 10px;
+        margin-left: 5px;
+        font-size: 11px;
+    }
+    .table_header p {
+        color: white;
+        font-size: 11px;
+        width: 180px;
+    }
+    .add_info_student input {
+        width: 100px;
+    }
+    .form-group {
+        & + .form-group {
+            margin-left: 10px;
+        }
+    }
+    .add_info_student label {
+        font-size: 15px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+    .table th {
+        background-color: #f6f8f9;
+        color: #77b1f7;
+        font-size: 10px;
+    }
+    .sua {
+        margin-left: 0px;
+    }
+    .inputlabel {
+        font-size: 10px;
+    }
+    .iteminput {
+        font-size: 10px;
+    }
+    .table {
+        width: 100% !important;
+    }
+    .list_student {
+        left: 20px;
+    }
+    .table_header {
+        justify-content: space-evenly;
+    }
+    .table_header p {
+        color: white;
+        font-size: 15px;
+    }
+
+    .table_section th,
+    .table_section td {
+        border: 1px solid #a5a5a5;
+        padding: 10px 5px;
+        text-align: center;
+        color: rgb(87, 80, 80);
+    }
+
+    .stt {
+        width: 5%;
+    }
+    .mssv {
+        width: 10%;
+    }
+    .name {
+        width: 20%;
+    }
+    .faculty {
+        width: 25%;
+    }
+    .delete {
+        width: 10%;
+    }
+    .dataTable {
+        width: 100% !important;
+    }
+    .table_header input {
+        width: 50%;
+    }
+    .add_info_student input {
+        width: 100px;
+    }
+    .form-group {
+        & + .form-group {
+            margin-left: 10px;
+        }
+    }
+    .add_info_student label {
+        font-size: 15px;
     }
 }

@@ -157,3 +157,20 @@ table button:hover {
 .input-add-list {
     padding: 5px;
 }
+@media only screen and (max-width: 723px) {
+    .input-add-list {
+        width: 80%;
+    }
+    .icon-delete {
+        font-size: 15px;
+    }
+}
+
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+    .input-add-list {
+        width: 80%;
+    }
+    .icon-delete {
+    }
+}

@@ -10,3 +10,10 @@
     min-height: 100px;
     max-height: min(calc(100vh - 60px), 734px);
 }
+
+@media only screen and (max-width: 723px) {
+    .wrapper{
+    max-height: min(calc(100vh - 60px), 560px)
+
+    }
+}

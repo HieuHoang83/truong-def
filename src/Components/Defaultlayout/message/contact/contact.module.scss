@@ -106,11 +106,17 @@
     margin-top: 65%;
     margin-left: 50%;
 }
+
 @keyframes load {
     from {
         transform: rotate(0deg);
     }
     to {
         transform: rotate(360deg);
+    }
+}
+@media only screen and (max-width: 723px) {
+    .body {
+        height: 390px;
     }
 }

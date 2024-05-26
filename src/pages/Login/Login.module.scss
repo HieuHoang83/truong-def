@@ -18,10 +18,8 @@
     border: solid 2px rgba(47, 48, 51, 0.2588235294);
     box-shadow: -1px 3px 10px 5px rgba(0, 0, 0, 0.4);
     position: absolute;
-    top: 21%;
-    left: 50%;
-    transform: translateX(-50%);
-
+    top: 20%;
+    left: 65%;
     border: 2px solid rgba(255, 255, 255, 0.35);
 }
 .login__body-list {
@@ -140,9 +138,8 @@ input:-webkit-autofill:active {
         transform: translateX(0);
         padding-top: 150px;
         background-color: black;
-    border-radius: 0px;
-    border: none;
-
+        border-radius: 0px;
+        border: none;
     }
     .login__body-list {
         list-style: none;
@@ -175,7 +172,7 @@ input:-webkit-autofill:active {
     }
 }
 /* table */
-@media only screen and (min-width: 740px) and (max-width: 1023px) {
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
     .login {
         left: 50%;
         transform: translateX(-50%);

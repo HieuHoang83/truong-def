@@ -18,7 +18,8 @@ function ItemListsub({
         <tr className={cx('row')}>
             <td className={cx('ordinary-num')}>{stt}</td>
             <td className={cx('subject')}>
-                {subjectId} <br /> {subjectName}
+                <div className={cx('subject-title')}>{subjectId}</div>
+                <br />
             </td>
             <td className={cx('classId')}>{classId} </td>
             <td className={cx('credit')}>{credit}</td>

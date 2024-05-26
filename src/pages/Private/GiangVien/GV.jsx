@@ -133,7 +133,7 @@ const GV = () => {
                 )}
             </div>
             <div className={cx('table_section')}>
-                <table id="dataTable">
+                <table className={cx("dataTable")}>
                     <thead>
                         <tr>
                             <th className={cx('stt')}> STT</th>

@@ -67,21 +67,23 @@
     }
 }
 @media only screen and (max-width: 723px) {
-    .breadcrum
-    {
+    .breadcrum {
         width: 90%;
-        margin:20px;
+        margin: 20px;
         margin-bottom: 0px;
+    }
+    .admin-wrapper {
+        width: calc(100vw - 45px);
     }
 }
 /* table */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-    .breadcrum
-    {
+    .breadcrum {
         width: 95%;
-        margin:20px;
+        margin: 20px;
         margin-bottom: 0px;
-
     }
-   
+    .admin-wrapper {
+        width: calc(100vw - 45px);
+    }
 }

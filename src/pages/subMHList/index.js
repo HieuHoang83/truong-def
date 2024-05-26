@@ -60,10 +60,10 @@ function SubMHList() {
     let sltin = listcoursecur.reduce((total, currentValue) => {
         return total + currentValue.credit;
     }, 0);
-    
+
     let standardizeEmail = sessionStorage.getItem('standardizeEmail');
     let [getIdx] = useState(localStorage.getItem('getIdx'));
-    
+
     useEffect(() => {
         onValue(child(dbRef, `fullCourses`), (snapshot) => {
             if (snapshot.child('list').exists()) {
@@ -143,7 +143,11 @@ function SubMHList() {
                                                 setaddclass(!addclass);
                                             }}
                                         ></button>
-                                        <span style={{ display: 'block', marginLeft: '12px' }} onClick={() => { }}>
+                                        <span
+                                            style={{ display: 'block', marginLeft: '12px' }}
+                                            onClick={() => {}}
+                                            className={cx('addcours')}
+                                        >
                                             Thêm khóa học
                                         </span>
                                     </div>
@@ -286,17 +290,17 @@ function SubMHList() {
                                                     document.getElementById('addClass__content--codeClass').value
                                                         .length > 0 &&
                                                     document.getElementById('addClass__content--credit').value.length >
-                                                    0 &&
+                                                        0 &&
                                                     document.getElementById('addClass__content--maxStudents').value
                                                         .length > 0 &&
                                                     document.getElementById('addClass__content--teacher').value.length >
-                                                    0 &&
+                                                        0 &&
                                                     document.getElementById('addClass__content--timeDay').value.length >
-                                                    0 &&
+                                                        0 &&
                                                     document.getElementById('addClass__content--timeStart').value
                                                         .length > 0 &&
                                                     document.getElementById('addClass__content--timeEnd').value.length >
-                                                    0 &&
+                                                        0 &&
                                                     document.getElementById('addClass__content--week').value.length > 0
                                                 ) {
                                                     if (
@@ -338,16 +342,19 @@ function SubMHList() {
                                                                 start: document.getElementById(
                                                                     'addClass__content--timeStart',
                                                                 ).value,
-                                                                string: `Thứ ${document.getElementById(
-                                                                    'addClass__content--timeDay',
-                                                                ).value
-                                                                    }: ${document.getElementById(
+                                                                string: `Thứ ${
+                                                                    document.getElementById(
+                                                                        'addClass__content--timeDay',
+                                                                    ).value
+                                                                }: ${
+                                                                    document.getElementById(
                                                                         'addClass__content--timeStart',
                                                                     ).value
-                                                                    } - ${document.getElementById(
+                                                                } - ${
+                                                                    document.getElementById(
                                                                         'addClass__content--timeEnd',
                                                                     ).value
-                                                                    }`,
+                                                                }`,
                                                             },
                                                         };
 
@@ -432,11 +439,11 @@ function SubMHList() {
                                                                 (listcoursecur[i].schedule.start >=
                                                                     newCourse.schedule.start &&
                                                                     listcoursecur[i].schedule.start <
-                                                                    newCourse.schedule.end) ||
+                                                                        newCourse.schedule.end) ||
                                                                 (listcoursecur[i].schedule.end >
                                                                     newCourse.schedule.start &&
                                                                     listcoursecur[i].schedule.end <=
-                                                                    newCourse.schedule.end)
+                                                                        newCourse.schedule.end)
                                                             ) {
                                                                 conditionalCourse = false;
                                                                 alert('Trùng giờ học đã đăng ký');
@@ -459,11 +466,11 @@ function SubMHList() {
                                                                 (listcoursewill[i].schedule.start >=
                                                                     newCourse.schedule.start &&
                                                                     listcoursewill[i].schedule.start <
-                                                                    newCourse.schedule.end) ||
+                                                                        newCourse.schedule.end) ||
                                                                 (listcoursewill[i].schedule.end >
                                                                     newCourse.schedule.start &&
                                                                     listcoursewill[i].schedule.end <=
-                                                                    newCourse.schedule.end)
+                                                                        newCourse.schedule.end)
                                                             ) {
                                                                 conditionalCourse = false;
                                                                 alert('Trùng giờ học đang đăng ký');
@@ -518,15 +525,15 @@ function SubMHList() {
                         {type !== 'admin' && (
                             <div className={cx('content')}>
                                 <table className={cx('main-table')}>
-                                    <tbody>
+                                    <tbody className={cx('tbody')}>
                                         <tr className={cx('row')}>
                                             <th className={cx('available-subject')}>Các môn đã đăng ký</th>
                                         </tr>
                                         <tr className={cx('row')}>
                                             <td className={cx('ordinary-num')}>STT</td>
-                                            <td className={cx('subject')}>Mã môn/ Môn</td>
+                                            <td className={cx('subject')}>Mã môn</td>
                                             <td className={cx('classId')}>Lớp</td>
-                                            <td className={cx('credit')}>Tín chỉ</td>
+                                            <td className={cx('credit')}>Tín</td>
                                             <td className={cx('num')}>Sỉ số</td>
                                             <td className={cx('teacher')}>Giảng viên</td>
                                             <td className={cx('schedule')}>Thời khóa biểu</td>
@@ -634,9 +641,9 @@ function SubMHList() {
 
                                         <tr className={cx('row')}>
                                             <td className={cx('ordinary-num')}>STT</td>
-                                            <td className={cx('subject')}>Mã môn/ Môn</td>
+                                            <td className={cx('subject')}>Mã môn</td>
                                             <td className={cx('classId')}>Lớp</td>
-                                            <td className={cx('credit')}>Tín chỉ</td>
+                                            <td className={cx('credit')}>Tín</td>
                                             <td className={cx('num')}>Sỉ số</td>
                                             <td className={cx('teacher')}>Giảng viên</td>
                                             <td className={cx('schedule')}>Thời khóa biểu</td>

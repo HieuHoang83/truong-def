@@ -15,12 +15,12 @@ import { getStorage } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-s
 import App from '~/App';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCraJtOXkitjV4HXKH9ntGGI9q-UEv4Y4k",
-    authDomain: "def-elearning.firebaseapp.com",
-    projectId: "def-elearning",
-    storageBucket: "def-elearning.appspot.com",
-    messagingSenderId: "1090322590908",
-    appId: "1:1090322590908:web:1914f2492fc6598cfb74b9"
+    apiKey: 'AIzaSyCraJtOXkitjV4HXKH9ntGGI9q-UEv4Y4k',
+    authDomain: 'def-elearning.firebaseapp.com',
+    projectId: 'def-elearning',
+    storageBucket: 'def-elearning.appspot.com',
+    messagingSenderId: '1090322590908',
+    appId: '1:1090322590908:web:1914f2492fc6598cfb74b9',
 };
 
 const app = initializeApp(firebaseConfig);
@@ -36,21 +36,19 @@ function Login() {
     const navigate = useNavigate();
 
     let handlelogin = (e) => {
-        
         e.preventDefault();
         let email = document.getElementById('login_email').value;
         let password = document.getElementById('login_password').value;
-        console.log("ok")
+        console.log('ok');
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
-                
                 const dbRef = ref(database);
                 let standardizeEmail = email.replace(/[^\w\s]/gi, '');
-                
+
                 get(child(dbRef, `accounts/${standardizeEmail}`)).then((snapshot) => {
                     if (snapshot.exists()) {
                         var inforStudent;
-                        
+
                         if (snapshot.child('infor/job').val() !== 'admin') {
                             inforStudent = {
                                 job: snapshot.child('infor/job').val(),
@@ -75,7 +73,7 @@ function Login() {
                                 job: snapshot.child('infor/job').val(),
                             };
                         }
-                        
+
                         setshow(false);
                         dispatch(action.set_initstate(inforStudent));
                         localStorage.removeItem('studentInfor');
@@ -85,7 +83,7 @@ function Login() {
                         App();
                         navigate('/Home');
                         window.location.reload();
-                        console.log(sessionStorage.getItem('standardizeEmail'))
+                        console.log(sessionStorage.getItem('standardizeEmail'));
                     }
                 });
             })
@@ -174,7 +172,7 @@ export {
     update,
     set,
     onValue,
-    remove
+    remove,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
 export {
     ref as ref_firestore,

@@ -703,7 +703,7 @@ li {
 }
 .box-add-course {
     width: 100%;
-    height: 390px;
+    height: 100vh;
     padding-left: 2.5%;
     padding-right: 2.5%;
     position: relative;
@@ -874,4 +874,136 @@ li {
     width: 98%;
     padding: 0px 10px;
     margin-top: 5px;
+}
+@media only screen and (max-width: 723px) {
+    .content {
+        margin: 0px 0px 0px 0px !important;
+        padding: 10px 5px !important;
+        width: 100%;
+        overflow: hidden;
+    }
+    .row {
+        width: 100vw;
+        height: 70px;
+    }
+    .tbody {
+        width: 100%;
+        overflow: hidden;
+    }
+    .available-subject {
+        width: 95vw;
+    }
+    .main-table tr td {
+        font-size: 10px;
+        padding: 5px;
+    }
+    .row .week {
+        flex: 17%;
+    }
+    .row .num {
+        flex: 11%;
+    }
+    .row .teacher {
+        flex: 17%;
+        padding: 3px;
+    }
+    .row .schedule {
+        flex: 15%;
+        padding: 0px;
+    }
+    .row .credit {
+        flex: 5% 1;
+        padding: 8px !important;
+    }
+    .delete {
+        flex: 8% 1 !important;
+        margin-right: 10px !important;
+    }
+    .row .subject {
+        flex: 12% 1;
+        padding: 5px;
+    }
+    .main-table tr td {
+        border: 2px solid rgb(134, 53, 53);
+        border-bottom: 0px;
+        border-left: 0px;
+    }
+    .main-table tr:last-child {
+        border-bottom: 2px solid rgb(134, 53, 53);
+    }
+    .main-table tr td:first-child {
+        border-left: 2px solid rgb(134, 53, 53);
+    }
+    .footer-btnsave {
+        width: 40%;
+    }
+    .subject-title {
+        width: 100%;
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        display: block;
+    }
+    .search__list-header {
+        font-size: 15px;
+    }
+    .search__list-prev {
+        left: 0px;
+    }
+    .search__item-hidden-detail {
+        width: 100%;
+        padding-left: 0px;
+        overflow: hidden;
+        font-size: 10px;
+    }
+    .search__item-hidden-detail-classId {
+        padding-left: 4px;
+    }
+    .search__item-hidden-detail-time {
+        flex: 18% 1;
+    }
+    .search__item-hidden-detail-week {
+        flex: 18% 1;
+    }
+    .search__item-hidden-detail-teacher {
+        flex: 23% 1;
+    }
+    .create_content_container {
+        margin-left: 0px !important;
+        padding-right: 5px;
+    }
+    .submit-add-course {
+        position: absolute;
+        top: 150px;
+        left: 41.5%;
+        height: 50px;
+    }
+    .search__list {
+        font-size: 12px;
+    }
+    .search__item-base-delete {
+        right: 40px;
+    }
+    .addcours {
+        font-size: 12px;
+    }
+    .plus_btn {
+        width: 25px;
+        height: 25px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+    .create_content_container {
+        margin-left: 0px !important;
+    }
+    .submit-add-course {
+        position: absolute;
+        top: 150px;
+        left: 47.5%;
+        height: 50px;
+    }
 }

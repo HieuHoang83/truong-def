@@ -375,11 +375,13 @@ function Header({ Active = true, Private = false, Course = false }) {
                             <i
                                 className="fa-regular fa-comment"
                                 onClick={() => {
+                                    
                                     SetIsmess(!ismess);
                                     SetIsnotify(false);
                                     document
                                         .querySelector(`.${cx('table-user')}`)
                                         .classList.add(`${cx('display__none')}`);
+                                        
                                 }}
                             ></i>
                             {ismess && (
@@ -397,6 +399,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                     )}
 
                     <div className={cx('user')}>
+                       
                         <img
                             src="https://bloganchoi.com/wp-content/uploads/2022/02/avatar-trang-y-nghia.jpeg"
                             alt=""
@@ -441,13 +444,14 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 to="/"
                                 className={cx('item-user')}
                                 onClick={() => {
+
                                     document
-                                        .querySelector(`.${cx('table-user')}`)
-                                        .classList.toggle(`${cx('display__none')}`);
+                                        .querySelector(`.${cx('table-user')}`).classList.toggle(`${cx('display__none')}`);
                                     signOut(auth).then(() => {
                                         sessionStorage.removeItem('login');
                                         sessionStorage.removeItem('standardizeEmail');
                                     })
+                                   
                                 }}
                             >
                                 Đăng xuất

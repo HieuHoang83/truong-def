@@ -51,9 +51,9 @@ const SubItem = ({id, title, starttime, starttime2, endtime, endtime2, ondelete,
                 </li>
                 <li className={cx('content-item', 'regis')}>
                     {registrationOver ? (
-                        <div className={cx('overtime')}>Hết thời gian đăng ký</div>
+                        <div className={cx('overtime')}>Quá hạn</div>
                     ) : registrationNotYetDue ? (
-                        <div className={cx('not-due')}>Chưa tới hạn đăng ký</div>
+                        <div className={cx('not-due')}>Chưa tới hạn </div>
                     ) : (
                         <OnTime id={id}/>
                     )}

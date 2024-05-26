@@ -65,7 +65,7 @@ function ListStudent() {
                         set(child(dbRef, `accounts/${email}/courses/current/score/${courseID}_${classCourse}`), arrStu);
                     }
                 }
-                if (type === 'teacher') {
+                if (type !== 'student') {
                     setState(arr);
                 } else if (type === 'student') {
                     onValue(

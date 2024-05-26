@@ -17,9 +17,10 @@ function Itemchoise({ classId, credit, numberStudents, maxStudents, teacher, sch
                 <li className={cx('search__item-hidden-detail-week')}>{week}</li>
                 <li className={cx('search__item-hidden-detail-select')}>
                     {type !== 'admin' && (
-                        <div className={cx('search__item-hidden-btn')} onClick={onsave}>
+                        <div className={cx('search__item-hidden-btn',"pc")} onClick={onsave}>
                             Chọn
                         </div>
+                        
                     )}
                     {type === 'admin' && (
                         <div className={cx('search__item-hidden-btn')} onClick={ondelete}>

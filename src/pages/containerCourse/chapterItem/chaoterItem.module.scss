@@ -257,3 +257,31 @@
 .icon {
     color: #ccc;
 }
+@media only screen and (max-width: 723px) {
+    .title-group {
+        height: 40px;
+    }
+    .expand_content {
+        height: 22px;
+        width: 22px;
+    }
+    .topic {
+        font-size: 17px;
+    }
+    .chapter-item {
+        min-height: 35px;
+        padding: 7px 10px;
+    }
+    .listchapter {
+        margin-top: 10px;
+    }
+    .icon_file {
+        font-size: 25px;
+    }
+    .modify_btn {
+        padding: 10px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+}

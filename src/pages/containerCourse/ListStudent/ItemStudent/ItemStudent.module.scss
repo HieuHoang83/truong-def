@@ -61,3 +61,11 @@
     padding: 5px 10px;
     font-size: 15px;
 }
+@media only screen and (max-width: 723px) {
+    .notcopy {
+        padding: 3px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+}
