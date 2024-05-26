@@ -1,5 +1,5 @@
 #tk 
-Sinh vien 
+Sinh vien .
 Tk: a.nguyencse@defu.edu.vn
 Mk:123456789
 Giáo viên 
@@ -8,6 +8,8 @@ Mk:123456789
 Admin
 Tk: admin01@defu.edu.vn
 Mk:defu12345
+
+có thể test trên cả đt và máy tính bảng
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
