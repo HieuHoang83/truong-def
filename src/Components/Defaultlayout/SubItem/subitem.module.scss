@@ -85,12 +85,10 @@ li {
 .overtime {
     cursor: default !important;
     color: red;
-    
 }
 .delete {
     margin-right: 30px;
     cursor: pointer;
-
 }
 @media only screen and (max-width: 723px) {
     .content-item--second {
@@ -126,16 +124,20 @@ li {
         font-size: 11px;
     }
     .overtime {
-        cursor: default !important;
-        color: red;
+        cursor: pointer;
+        padding: 0px 6px;
+        margin-top: 10px;
+        border-radius: 10px;
         position: absolute;
-        top: -5px;
-        left: -15px;
-        width: 61px;
-        font-size: 13px;
+        top: -18px;
+        width: 65px;
+        right: 5px;
+        font-size: 11px;
+    }
+    .delete {
+        margin-right: 10px;
     }
 }
 /* table */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-   
 }

@@ -233,7 +233,7 @@ li {
         align-items: center;
         min-width: 60px;
         position: relative;
-        left: -55px;
+        left: -35px;
     }
 
     .content-item--second {
@@ -242,7 +242,12 @@ li {
         align-items: center;
         min-width: 60px;
         position: relative;
-        left: -27px;
+        left: -5px;
+    }
+
+    .delete {
+        position: relative;
+        right: -20px;
     }
 }
 

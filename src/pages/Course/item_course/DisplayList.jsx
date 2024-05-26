@@ -59,8 +59,8 @@ const DisplayList = (props) => {
 
                     <div className="display-content-detail">
                         <p className="display-content-detail-x">{props.list.nameCourse}</p>
-                        <p style={{ marginTop: '20px' }}>{props.list.nameGv}</p>
-                        <p style={{ marginTop: '20px', fontWeight: 'bolder', color: 'blue' }}>
+                        <p className="display-content-detail-namegv" style={{ marginTop: '20px' }}>{props.list.nameGv}</p>
+                        <p className="display-content-detail-class" style={{ marginTop: '20px', fontWeight: 'bolder', color: 'blue' }}>
                             {props.list.classCourse}
                         </p>
                     </div>

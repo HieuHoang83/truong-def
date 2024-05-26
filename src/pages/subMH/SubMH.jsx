@@ -99,7 +99,7 @@ const SubMH = () => {
                 <div>
                     {!modalOpen && (
                         <ul className={cx('content__row')}>
-                            <li className={cx('content-item', 'STT')}>STT</li>
+                            <li className={cx('content-item', 'STT')}>Stt</li>
                             <li className={cx('content-item', 'desc')}>Mô tả</li>
                             <li className={cx('content-item', 'time')}>
                                 <div className={cx('content-item--first')}>Bắt đầu</div>
