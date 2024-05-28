@@ -11,7 +11,7 @@ Admin
 Tk: admin01@defu.edu.vn
 Mk:defu12345
 
-có thể test trên cả đt và máy tính bảng
+có thể test trên cả điện thoại,máy tính và máy tính bảng
 
 
 # Getting Started with Create React App
