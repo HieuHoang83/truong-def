@@ -12,6 +12,8 @@ Tk: admin01@defu.edu.vn
 Mk:defu12345
 
 có thể test trên cả đt và máy tính bảng
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -83,6 +85,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## or can run through link:
-
-https://def-elearning.web.app/
