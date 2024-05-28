@@ -123,9 +123,11 @@ function SubMHList() {
                         )}
                         {ischoice && (
                             <div className={cx('search__list-header')}>
-                                {' '}
-                                Đăng ký lớp <br />
-                                {listcoursedone[indexItem].name}
+                                <p>
+                                    Đăng ký lớp <br />
+                                    {listcoursedone[indexItem].name}
+                                </p>
+
                                 <div
                                     className={cx('search__list-prev')}
                                     onClick={() => {

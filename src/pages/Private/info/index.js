@@ -20,77 +20,77 @@ function Info({ onchange }) {
 
             <div className={cx('info__body')}>
                 <div className={cx('info__blockInput')}>
-                    <span className={cx('label-infor')}>Họ và tên</span>
-                    <span className={cx('myInfor')}>{todos.name}</span>
+                    <p className={cx('label-infor')}>Họ và tên</p>
+                    <p className={cx('myInfor')}>{todos.name}</p>
                 </div>
 
                 {typePerson(type) && (
                     <div className={cx('info__blockInput')}>
-                        <span className={cx('label-infor')}>Mã số sinh viên</span>
-                        <span className={cx('myInfor')}>{todos.id}</span>
+                        <p className={cx('label-infor')}>Mã số sinh viên</p>
+                        <p className={cx('myInfor')}>{todos.id}</p>
                     </div>
                 )}
 
                 {!typePerson(type) && (
                     <div className={cx('info__blockInput')}>
-                        <span className={cx('label-infor')}>Mã số giảng viên</span>
-                        <span className={cx('myInfor')}>{todos.id}</span>
+                        <p className={cx('label-infor')}>Mã số giảng viên</p>
+                        <p className={cx('myInfor')}>{todos.id}</p>
                     </div>
                 )}
                 {!typePerson(type) && (
                     <div className={cx('info__blockInput')}>
-                        <span className={cx('label-infor')}>Bằng cấp</span>
-                        <span className={cx('myInfor')}>{todos.degree}</span>
+                        <p className={cx('label-infor')}>Bằng cấp</p>
+                        <p className={cx('myInfor')}>{todos.degree}</p>
                     </div>
                 )}
 
                 <div className={cx('info__blockInput')}>
-                    <span className={cx('label-infor')}>Ngày sinh</span>
-                    <span className={cx('myInfor')}>{todos.birthday}</span>
+                    <p className={cx('label-infor')}>Ngày sinh</p>
+                    <p className={cx('myInfor')}>{todos.birthday}</p>
                 </div>
                 <div className={cx('info__blockInput')}>
-                    <span className={cx('label-infor')}>Giới tính</span>
-                    <span className={cx('myInfor')}>{todos.gender}</span>
+                    <p className={cx('label-infor')}>Giới tính</p>
+                    <p className={cx('myInfor')}>{todos.gender}</p>
                 </div>
                 <div className={cx('info__blockInput')}>
-                    <span className={cx('label-infor')}>Nơi sinh</span>
-                    <span className={cx('myInfor')}>{todos.born}</span>
+                    <p className={cx('label-infor')}>Nơi sinh</p>
+                    <p className={cx('myInfor')}>{todos.born}</p>
                 </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Email cá nhân</span>
-                    <span className={cx('myInfor')}>{todos.email}</span>
+                    <p className={cx('label-infor')}>Email cá nhân</p>
+                    <p className={cx('myInfor')}>{todos.email}</p>
                 </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Số điện thoại</span>
-                    <span className={cx('myInfor')}>{todos.phone}</span>
+                    <p className={cx('label-infor')}>Số điện thoại</p>
+                    <p className={cx('myInfor')}>{todos.phone}</p>
                 </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}> Mạng xã hội</span>
+                    <p className={cx('label-infor')}> Mạng xã hội</p>
                     <a href={`${todos.socialNetwork}`} className={cx('myInfor', 'social')}>
                         {todos.socialNetwork}
                     </a>
                 </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Địa chỉ</span>
-                    <span className={cx('myInfor')}>{todos.address}</span>
+                    <p className={cx('label-infor')}>Địa chỉ</p>
+                    <p className={cx('myInfor')}>{todos.address}</p>
                 </div>
                 <div className={cx('info__header')}>Thông tin người thân </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Tên người thân</span>
-                    <span className={cx('myInfor')}>{todos.nameParent1}</span>
+                    <p className={cx('label-infor')}>Tên người thân</p>
+                    <p className={cx('myInfor')}>{todos.nameParent1}</p>
                 </div>
                 <div className={cx('info__blockInput', ' info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Số điện thoại người thân</span>
-                    <span className={cx('myInfor')}>{todos.phoneParent1}</span>
+                    <p className={cx('label-infor')}>Số điện thoại người thân</p>
+                    <p className={cx('myInfor')}>{todos.phoneParent1}</p>
                 </div>
                 <div className={cx('info__header')}>Thông tin người thân </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Tên người thân</span>
-                    <span className={cx('myInfor')}>{todos.nameParent2}</span>
+                    <p className={cx('label-infor')}>Tên người thân</p>
+                    <p className={cx('myInfor')}>{todos.nameParent2}</p>
                 </div>
                 <div className={cx('info__blockInput', 'info__blockInput-input')}>
-                    <span className={cx('label-infor')}>Số điện thoại người thân</span>
-                    <span className={cx('myInfor')}>{todos.phoneParent2}</span>
+                    <p className={cx('label-infor')}>Số điện thoại người thân</p>
+                    <p className={cx('myInfor')}>{todos.phoneParent2}</p>
                 </div>
 
                 <div

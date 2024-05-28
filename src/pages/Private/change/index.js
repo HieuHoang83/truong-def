@@ -173,11 +173,12 @@ function Change(onsave) {
     };
     return (
         <form className={cx('info-item', 'change-info')}>
+            <h1 className={cx('change-info__decoration')}> Cập nhật thông tin liên lạc</h1>
             <div className={cx('change-info__body')}>
                 <div className={cx('change-info__me')}>
-                    <div className={cx('change-info__me-header')}>Thay đổi thông tin cá nhân</div>
+                    <h2 className={cx('change-info__me-header')}>Thay đổi thông tin cá nhân</h2>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Số điện thoại</span>
+                        <h3 className={cx('change-info__label')}>Số điện thoại</h3>
                         <input
                             ref={phoneref}
                             type="tel"
@@ -186,7 +187,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Nơi ở hiện tại của {nameCard} </span>
+                        <h3 className={cx('change-info__label')}>Nơi ở hiện tại của {nameCard} </h3>
                         <input
                             ref={addressref}
                             type="text"
@@ -195,7 +196,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Địa chỉ email cá nhân</span>
+                        <h3 className={cx('change-info__label')}>Địa chỉ email cá nhân</h3>
                         <input
                             ref={emailref}
                             type="email"
@@ -204,7 +205,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Trang mạng xã hội cá nhân </span>
+                        <h3 className={cx('change-info__label')}>Trang mạng xã hội cá nhân </h3>
                         <input
                             type="text"
                             className={cx('change-info__input')}
@@ -214,9 +215,9 @@ function Change(onsave) {
                     </div>
                 </div>
                 <div className={cx('change-info__family')}>
-                    <div className={cx('change-info__me-header')}>Thay đổi thông tin người thân</div>
+                    <h2 className={cx('change-info__me-header')}>Thay đổi thông tin người thân</h2>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Tên người thân(1)</span>
+                        <h3 className={cx('change-info__label')}>Tên người thân(1)</h3>
                         <input
                             type="text"
                             className={cx('change-info__input')}
@@ -225,7 +226,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Số điện thoại người thân</span>
+                        <h3 className={cx('change-info__label')}>Số điện thoại người thân</h3>
                         <input
                             type="text"
                             className={cx('change-info__input')}
@@ -234,7 +235,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Tên người thân(2)</span>
+                        <h3 className={cx('change-info__label')}>Tên người thân(2)</h3>
                         <input
                             ref={nameParent2ref}
                             type="text"
@@ -243,7 +244,7 @@ function Change(onsave) {
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <span className={cx('change-info__label')}>Số điện thoại người thân</span>
+                        <h3 className={cx('change-info__label')}>Số điện thoại người thân</h3>
                         <input
                             type="text"
                             className={cx('change-info__input')}
@@ -259,7 +260,6 @@ function Change(onsave) {
                     onClick={(e) => handleSave(e)}
                 />
             </div>
-            <div className={cx('change-info__decoration')}>Cập nhật thông tin liên lạc</div>
         </form>
     );
 }

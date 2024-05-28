@@ -95,7 +95,6 @@
 .change-info__decoration {
     background-color: white;
     color: #ff9000;
-    width: 191px;
     font-size: 16px;
     height: 30px;
     display: flex;
@@ -105,9 +104,11 @@
     top: 14px;
     left: 30px;
     font-family: 'Roboto';
+    z-index: 2;
 }
+
 @media only screen and (max-width: 723px) {
-    .change-info__body{
+    .change-info__body {
         flex-direction: column;
     }
     .change-info__me {
@@ -121,20 +122,19 @@
         display: flex;
         flex-direction: column;
     }
-    .change-info__body{
+    .change-info__body {
         height: auto;
         padding-bottom: 50px;
     }
-    .change-info__btn{
+    .change-info__btn {
         margin-left: 30.5%;
         position: absolute;
         bottom: 1.5%;
     }
-    .change-info__me-header{
+    .change-info__me-header {
         margin-bottom: 5px;
     }
 }
 /* table */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-   
 }

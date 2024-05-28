@@ -149,7 +149,7 @@ function Course() {
     return (
         <div className={cx('backGround')}>
             <div className={cx('wraper')}>
-                <div className={cx('header')}>Các môn học của tôi</div>
+                <h1 className={cx('header')}>Các môn học của tôi</h1>
                 {!loadding && (
                     <>
                         <div className={cx('control')}>
