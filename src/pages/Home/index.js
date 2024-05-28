@@ -10,7 +10,7 @@ function Home() {
         {
             title: 'Thông báo gói học bổng DEF',
             content: 'Là gói học bổng mỗi kỳ dành riêng cho sinh viên DEF có học lực giỏi',
-            imag: 'https://up-anh.vi-vn.vn/img/1713061613_68ab8a441e06f10a210471696f775182.png',
+            imag: 'https://duhocinec.com/static/assets/uploads/du-hoc-my/Chung/hoc-bong-du-hoc-my-098.jpg',
             text_more: 'Điều kiện xét học bổng: Điểm trung bình từ 8 trở lên, điểm thành phần trên 5 và điểm rèn luyện trên 80',
         },
         {
