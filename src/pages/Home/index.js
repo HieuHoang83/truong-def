@@ -12,14 +12,12 @@ function Home() {
         {
             title: 'Thông báo gói học bổng DEF',
             content: 'Là gói học bổng mỗi kỳ dành riêng cho sinh viên DEF có học lực giỏi',
-<<<<<<< HEAD
             imag: hocbong,
             text_more:
                 'Điều kiện xét học bổng: Điểm trung bình từ 8 trở lên, điểm thành phần trên 5 và điểm rèn luyện trên 80',
-=======
             imag: 'https://duhocinec.com/static/assets/uploads/du-hoc-my/Chung/hoc-bong-du-hoc-my-098.jpg',
-            text_more: 'Điều kiện xét học bổng: Điểm trung bình từ 8 trở lên, điểm thành phần trên 5 và điểm rèn luyện trên 80',
->>>>>>> e7ec28f1e4b063447a7f2cbce6f64e2bae735f13
+            text_more:
+                'Điều kiện xét học bổng: Điểm trung bình từ 8 trở lên, điểm thành phần trên 5 và điểm rèn luyện trên 80',
         },
         {
             title: 'Thông báo tham gia SHCD định kỳ',

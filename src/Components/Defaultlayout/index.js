@@ -45,15 +45,9 @@ function DefaultLayout({ children }) {
         <>
             {show && (
                 <div className={cx('wrapper')}>
-<<<<<<< HEAD
                     <a className={cx('up', 'display__none')} href="#">
-=======
-                   <a className={cx('up', 'display__none')} href="#">
->>>>>>> e7ec28f1e4b063447a7f2cbce6f64e2bae735f13
                         <i className={cx('fa-solid', 'fa-chevron-up')}></i>
                     </a>
-
-                    <Header />
                     <div className={cx('container')}>{children}</div>
                 </div>
             )}
