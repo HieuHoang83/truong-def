@@ -45,14 +45,9 @@ function DefaultLayout({ children }) {
         <>
             {show && (
                 <div className={cx('wrapper')}>
-                    <div
-                        className={cx('up', 'display__none')}
-                        onClick={() => {
-                            window.scrollTo(0, 0);
-                        }}
-                    >
+                    <a className={cx('up', 'display__none')} href="#">
                         <i className={cx('fa-solid', 'fa-chevron-up')}></i>
-                    </div>
+                    </a>
 
                     <Header />
                     <div className={cx('container')}>{children}</div>

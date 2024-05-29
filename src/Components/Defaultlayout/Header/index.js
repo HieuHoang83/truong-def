@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
-import def from 'src/img/def.png'; // with import
+import def from 'src/img/def_old.png'; // with import
 import { database, get, child, ref, set, onValue, auth, signOut } from '~/pages/Login';
 import { UseStore } from '~/Store';
 
@@ -19,7 +19,7 @@ function Header({ Active = true, Private = false, Course = false }) {
     const dbRef = ref(database);
 
     let standardizeEmail = sessionStorage.getItem('standardizeEmail');
-    if (window.location.href === 'https://def-elearning.web.app/calender') {
+    if (window.location.href === 'http://localhost:3000/calender') {
         if (name.page_Home || name.page_Private || name.page_Course) {
             setName({
                 page_Home: false,
@@ -28,7 +28,7 @@ function Header({ Active = true, Private = false, Course = false }) {
             });
         }
     }
-    if (window.location.href === 'https://def-elearning.web.app/Home') {
+    if (window.location.href === 'http://localhost:3000/Home') {
         if (name.page_Private || name.page_Course) {
             setName({
                 page_Home: true,
@@ -37,7 +37,7 @@ function Header({ Active = true, Private = false, Course = false }) {
             });
         }
     }
-    if (window.location.href === 'https://def-elearning.web.app/course/addcourse') {
+    if (window.location.href === 'http://localhost:3000/course/addcourse') {
         if (name.page_Home || name.page_Private || name.page_Course) {
             setName({
                 page_Home: false,
@@ -46,7 +46,7 @@ function Header({ Active = true, Private = false, Course = false }) {
             });
         }
     }
-    if (window.location.href === 'https://def-elearning.web.app/course/addcourse/list') {
+    if (window.location.href === 'http://localhost:3000/course/addcourse/list') {
         if (name.page_Home || name.page_Private || name.page_Course) {
             setName({
                 page_Home: false,
@@ -56,7 +56,7 @@ function Header({ Active = true, Private = false, Course = false }) {
         }
     }
 
-    if (window.location.href === 'https://def-elearning.web.app/course/content') {
+    if (window.location.href === 'http://localhost:3000/course/content') {
         if (name.page_Home || name.page_Private || name.page_Course) {
             setName({
                 page_Home: false,
@@ -65,7 +65,7 @@ function Header({ Active = true, Private = false, Course = false }) {
             });
         }
     }
-    if (window.location.href === 'https://def-elearning.web.app/private') {
+    if (window.location.href === 'http://localhost:3000/private') {
         if (!name.page_Private) {
             setName({
                 page_Home: false,
@@ -74,7 +74,7 @@ function Header({ Active = true, Private = false, Course = false }) {
             });
         }
     }
-    if (window.location.href === 'https://def-elearning.web.app/course') {
+    if (window.location.href === 'http://localhost:3000/course') {
         if (!name.page_Course) {
             setName({
                 page_Home: false,
@@ -174,11 +174,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                             }
                         }}
                     >
-                       
-                        <span className={cx('mobile')}>
-                       Information
-                        </span>
-                       
+                        <span className={cx('mobile')}>Information</span>
                     </Link>
 
                     <Link
@@ -375,13 +371,11 @@ function Header({ Active = true, Private = false, Course = false }) {
                             <i
                                 className="fa-regular fa-comment"
                                 onClick={() => {
-                                    
                                     SetIsmess(!ismess);
                                     SetIsnotify(false);
                                     document
                                         .querySelector(`.${cx('table-user')}`)
                                         .classList.add(`${cx('display__none')}`);
-                                        
                                 }}
                             ></i>
                             {ismess && (
@@ -399,7 +393,6 @@ function Header({ Active = true, Private = false, Course = false }) {
                     )}
 
                     <div className={cx('user')}>
-                       
                         <img
                             src="https://bloganchoi.com/wp-content/uploads/2022/02/avatar-trang-y-nghia.jpeg"
                             alt=""
@@ -444,14 +437,13 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 to="/"
                                 className={cx('item-user')}
                                 onClick={() => {
-
                                     document
-                                        .querySelector(`.${cx('table-user')}`).classList.toggle(`${cx('display__none')}`);
+                                        .querySelector(`.${cx('table-user')}`)
+                                        .classList.toggle(`${cx('display__none')}`);
                                     signOut(auth).then(() => {
                                         sessionStorage.removeItem('login');
                                         sessionStorage.removeItem('standardizeEmail');
-                                    })
-                                   
+                                    });
                                 }}
                             >
                                 Đăng xuất

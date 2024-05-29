@@ -1,7 +1,7 @@
 .list_student {
     position: relative;
     top: 80px;
-    left: 100px;
+    left: 280px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -215,21 +215,21 @@ table button:hover {
         font-size: 11px;
     }
     .table_header input {
-        width: 40%;
+        width: 45%;
         font-size: 11px;
-        padding: 10px;
+        padding: 5px;
         margin-left: 2px;
         margin-right: 0px;
     }
     .add_student {
-        padding: 10px;
+        padding: 5px;
         margin-left: 5px;
-        font-size: 11px;
+        font-size: 10px;
     }
     .table_header p {
         color: white;
-        font-size: 11px;
-        width: 180px;
+        font-size: 10px;
+        min-width: 120px;
     }
     .add_info_student input {
         width: 100px;

@@ -1,8 +1,10 @@
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 
-import nen from 'src/img/imgvan.png'; // with import
-import logo from 'src/img/def.png'; // with import
+import nen from 'src/img/imgvan.webp'; // with import
+import nendt from 'src/img/hinh-nen-dep-cho-dien-thoai_111220841.webp'; // with import
+
+import logo from 'src/img/def_old.png'; // with import
 
 import { Link, useNavigate } from 'react-router-dom';
 import { UseStore } from '~/Store';
@@ -91,10 +93,11 @@ function Login() {
                 setshow(true);
             });
     };
+
     return (
         <div
             style={{
-                backgroundImage: `url(${nen})`,
+                backgroundImage: `url(${window.innerWidth > 724 ? nen : nendt})`,
             }}
             className={cx('modul')}
         >

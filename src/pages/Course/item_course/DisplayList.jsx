@@ -4,21 +4,33 @@ import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import { get, child, database, ref, set, remove, onValue } from '~/pages/Login';
+import nen1 from 'src/img/anh nen 1.webp'; // with import
+import nen2 from 'src/img/anh nen 2.webp'; // with import
+import nen3 from 'src/img/anh nen 3.jpg'; // with import
+import nen4 from 'src/img/anh nen 4.jpg'; // with import
+import nen5 from 'src/img/anh nen 5.jpg'; // with import
+import nen6 from 'src/img/anh nen 6.webp'; // with import
+import nen7 from 'src/img/anh nen 8.webp'; // with import
+import nen8 from 'src/img/anh nen 9.jpg'; // with import
+import nen9 from 'src/img/anh nen 10.jpg'; // with import
+
+
+
 // nameCourse: 'Lập trình nâng cao',
 // nameGv: 'Nguyen Thi Lan',
 // classCourse: 'L08',
 const DisplayList = (props) => {
     const linkimg = [
-        'https://i.pinimg.com/originals/2f/60/6a/2f606ad14bf9171e5f41b42a01b4441f.jpg',
-        'https://inngochuong.com/uploads/images/mau-san-pham/mau-backgroud-dep-don-gian/them/backgroud-dep-phong-nen-mau-go-sang.jpg',
-        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr3STMDTl5_mrX6BeS-dGCKrd9J_-qrZar-Q&usqp=CAU',
-        'https://intoroigiare.vn/wp-content/uploads/2023/11/background-mau-trang.jpg',
-        'https://ngoisaogiadinh.vn/wp-content/uploads/Background-bau-troi-ve-bang-mau-nuoc-dep-1024x683.jpg',
-        'https://gcs.tripi.vn/public-tripi/tripi-feed/img/474112oiJ/background-hoa-la-dep_024122907.jpg',
-        'https://images.fpt.shop/unsafe/filters:quality(5)/fptshop.com.vn/uploads/images/tin-tuc/176406/Originals/glenn-carstens-peters-IMRuLuNnFw4-unsplash.jpg',
-        'https://intoroigiare.vn/wp-content/uploads/2023/11/powerpoint-background-dep.jpg',
-        'https://getdrive.net/wp-content/uploads/2020/03/Powerpoint-la-mot-cong-cu-thuyet-trinh-tien-loi-hieu-qua.jpg',
-        'https://img4.thuthuatphanmem.vn/uploads/2020/07/30/background-may-xanh-khai-giang-cuc-dep_024037540.jpg',
+        nen1,
+        nen2,
+        nen3,
+        nen4,
+        nen5,
+        nen6,
+        nen7,
+        nen8,
+        nen9,
+        
     ];
     let index = props.index % linkimg.length;
     let dbRef = ref(database);

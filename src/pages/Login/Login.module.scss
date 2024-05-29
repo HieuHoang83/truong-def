@@ -14,7 +14,7 @@
     width: 450px;
     height: 450px;
     border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.209803922);
+    background-color: rgb(255 255 255 / 25%);
     border: solid 2px rgba(47, 48, 51, 0.2588235294);
     box-shadow: -1px 3px 10px 5px rgba(0, 0, 0, 0.4);
     position: absolute;
@@ -61,7 +61,7 @@
 }
 .login__input {
     background-color: transparent !important;
-    color: white;
+    color: black;
     border: none;
     outline: none;
     position: relative;
@@ -74,12 +74,12 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-background-clip: text;
-    -webkit-text-fill-color: #ffe3ca;
+    -webkit-text-fill-color: white;
 }
 .icon__login {
     font-size: 1.7rem;
     opacity: 0.9;
-    color: #ffe3ca;
+    color: black;
     margin-bottom: 3px;
 }
 .login__footer {
@@ -108,7 +108,7 @@ input:-webkit-autofill:active {
     opacity: 0.8;
 }
 .err_message {
-    color: #e72929;
+    color: #990011;
     text-align: center;
     font-size: 23px;
     position: absolute;
@@ -137,7 +137,6 @@ input:-webkit-autofill:active {
         left: 0%;
         transform: translateX(0);
         padding-top: 150px;
-        background-color: black;
         border-radius: 0px;
         border: none;
     }

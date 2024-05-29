@@ -64,6 +64,21 @@
 @media only screen and (max-width: 723px) {
     .notcopy {
         padding: 3px;
+        font-size: 10px;
+    }
+    .sua {
+        margin-left: 0px;
+    }
+    .inputlabel {
+        width: 20px;
+        padding: 5px 2px;
+        font-size: 10px;
+    }
+    .iteminput {
+        flex: 1 1;
+        width: 100%;
+        padding-left: 5px;
+        font-size: 10px;
     }
 }
 /* table */
