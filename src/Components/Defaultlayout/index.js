@@ -26,25 +26,19 @@ function DefaultLayout({ children }) {
     useEffect(() => {
         if (state.todos.id === '') {
             let info = localStorage.getItem('studentInfor');
-
+            // eslint-disable-next-line
             dispatch(action.set_initstate(JSON.parse(info)));
         }
         setTimeout(() => {
             setshow(true);
         }, 400);
+        // eslint-disable-next-line
     }, []);
-    // setTimeout(() => {
-    //     if (state.todos.id === '') {
-    //         let info = localStorage.getItem('studentInfor');
-    //         console.log('current ' + info);
-    //         dispatch(action.set_initstate(JSON.parse(info)));
-    //     }
-    // }, 1000);
 
     return (
         <>
             <Header></Header>
-
+            git init
             {show && (
                 <div className={cx('wrapper')}>
                     <a className={cx('up', 'display__none')} href="#">

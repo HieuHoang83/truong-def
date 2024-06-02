@@ -1,9 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
 
-import nen from 'src/img/imgvan.webp'; // with import
-import nendt from 'src/img/hinh-nen-dep-cho-dien-thoai_111220841.webp'; // with import
-
 import logo from 'src/img/def_old.png'; // with import
 
 import { Link, useNavigate } from 'react-router-dom';
