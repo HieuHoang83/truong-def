@@ -1,8 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Login.module.scss';
-
 import logo from 'src/img/def_old.png'; // with import
-
 import { Link, useNavigate } from 'react-router-dom';
 import { UseStore } from '~/Store';
 import { action } from '~/Store';

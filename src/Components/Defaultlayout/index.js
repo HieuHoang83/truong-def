@@ -38,7 +38,6 @@ function DefaultLayout({ children }) {
     return (
         <>
             <Header></Header>
-            git init
             {show && (
                 <div className={cx('wrapper')}>
                     <a className={cx('up', 'display__none')} href="#">
