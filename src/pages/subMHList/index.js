@@ -145,13 +145,12 @@ function SubMHList() {
                                                 setaddclass(!addclass);
                                             }}
                                         ></button>
-                                        <span
+                                        <div
                                             style={{ display: 'block', marginLeft: '12px' }}
-                                            onClick={() => {}}
                                             className={cx('addcours')}
                                         >
                                             Thêm khóa học
-                                        </span>
+                                        </div>
                                     </div>
                                 )}
                             </div>
@@ -707,9 +706,9 @@ function SubMHList() {
 
                     {type !== 'admin' && (
                         <div className={cx('footer')}>
-                            <div className={cx('footer-slcourse')}> Tổng số môn học : {listcoursecur.length}</div>
+                            <p className={cx('footer-slcourse')}> Tổng số môn học : {listcoursecur.length}</p>
 
-                            <div className={cx('footer-sltin')}>Số tín đã đăng ký : {sltin}</div>
+                            <p className={cx('footer-sltin')}>Số tín đã đăng ký : {sltin}</p>
                             <div
                                 className={cx('footer-btnsave')}
                                 onClick={() => {

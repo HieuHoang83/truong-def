@@ -93,7 +93,7 @@ function Message({ onClick }) {
             <div className={cx('clear')} onClick={onClick}>
                 <i className={cx('fa-solid', 'fa-xmark')}></i>
             </div>
-            <div className={cx('header')}>Tin nhắn cá nhân</div>
+            <p className={cx('header')}>Tin nhắn cá nhân</p>
             {!contact && (
                 <div className={cx('box_search')}>
                     <div className={cx('search')}>

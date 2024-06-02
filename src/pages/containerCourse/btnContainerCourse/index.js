@@ -8,7 +8,6 @@ function BtnContainerCourse({ title, active, onClick }) {
     });
     return (
         <button className={classes} onClick={onClick}>
-            
             {title}
         </button>
     );

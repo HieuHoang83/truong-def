@@ -95,19 +95,14 @@ function Login() {
     };
 
     return (
-        <div
-            style={{
-                backgroundImage: `url(${window.innerWidth > 724 ? nen : nendt})`,
-            }}
-            className={cx('modul')}
-        >
+        <div className={cx('modul')}>
             <form className={cx('login')}>
                 <div className={cx('login__header')}>
                     <img className={cx('login__header-img')} src={logo} alt="" />
                 </div>
 
                 <div className={cx('login__body')}>
-                    <div className={cx('login__title')}>Đăng Nhập</div>
+                    <h1 className={cx('login__title')}>Đăng Nhập</h1>
                     <ul className={cx('login__body-list')}>
                         <li className={cx('login__body-list-item')}>
                             <div className={cx('icon__login')}>
@@ -158,7 +153,7 @@ function Login() {
                 </div>
 
                 <Link to="/Home" className={cx('login__footer')} onClick={handlelogin}>
-                    Đăng Nhập
+                    <p>Đăng Nhập</p>
                 </Link>
             </form>
         </div>

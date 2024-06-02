@@ -10,12 +10,12 @@ function MessItem({ name, time, content, onClick }) {
                     alt="anh avatar"
                     className={cx('img')}
                 />
-                <div className={cx('name')}>{name}</div>
+                <p className={cx('name')}>{name}</p>
             </div>
             <div className={cx('viewer')}>
                 <div className={cx('body')}>
-                    {content}
-                    <div className={cx('viewer-time')}>{time}</div>
+                    <p>{content}</p>
+                    <p className={cx('viewer-time')}>{time}</p>
                 </div>
             </div>
         </div>

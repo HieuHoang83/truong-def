@@ -5,19 +5,29 @@ function Footer_Semester_Point({ fullnumber, semesternumber, diemtbhk, fulldiemt
     return (
         <ul className={cx('semester__footer')}>
             <li className={cx('semester__footer--item')}>
-                Số tín chỉ đăng ký học kỳ : <b>{semesternumber}</b>
+                <p>
+                    Số tín chỉ đăng ký học kỳ : <b>{semesternumber}</b>
+                </p>
             </li>
             <li className={cx('semester__footer--item')}>
-                Số tín chỉ tích lũy học kỳ : <b>{semesternumber}</b>
+                <p>
+                    Số tín chỉ tích lũy học kỳ : <b>{semesternumber}</b>
+                </p>
             </li>
             <li className={cx('semester__footer--item')}>
-                Điểm trung bình học kỳ : <b>{diemtbhk}</b>
+                <p>
+                    Điểm trung bình học kỳ : <b>{diemtbhk}</b>
+                </p>
             </li>
             <li className={cx('semester__footer--item')}>
-                Số tín chỉ tích lũy : <b>{fullnumber}</b>
+                <p>
+                    Số tín chỉ tích lũy : <b>{fullnumber}</b>
+                </p>
             </li>
             <li className={cx('semester__footer--item')}>
-                Điểm trung bình tích lũy :<b>{fulldiemtb}</b>
+                <p>
+                    Điểm trung bình tích lũy :<b>{fulldiemtb}</b>
+                </p>
             </li>
         </ul>
     );

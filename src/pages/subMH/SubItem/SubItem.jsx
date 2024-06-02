@@ -36,24 +36,24 @@ const SubItem = ({id, title, starttime, starttime2, endtime, endtime2, ondelete,
     return (
         <div>
             <ul className={cx('content__row', 'content__row_item')}>
-                <li className={cx('content-item', 'STT')}>{STT}</li>
-                <li className={cx('content-item', 'desc')}>{title}</li>
+                <li className={cx('content-item', 'STT')}><p>{STT}</p></li>
+                <li className={cx('content-item', 'desc')}><p>{title}</p></li>
                 <li className={cx('content-item', 'time')}>
-                    <div className={cx('content-item--first')}>
+                    <p className={cx('content-item--first')}>
                         {startParts[2] + '-' + startParts[1] + '-' + startParts[0]}
                         <br />
                         {starttime2}
-                    </div>
-                    <div className={cx('content-item--second')}>
+                    </p>
+                    <p className={cx('content-item--second')}>
                         {endParts[2] + '-' + endParts[1] + '-' + endParts[0]} <br />
                         {endtime2}
-                    </div>
+                    </p>
                 </li>
                 <li className={cx('content-item', 'regis')}>
                     {registrationOver ? (
-                        <div className={cx('overtime')}>Quá hạn</div>
+                        <p className={cx('overtime')}>Quá hạn</p>
                     ) : registrationNotYetDue ? (
-                        <div className={cx('not-due')}>Chưa tới hạn </div>
+                        <p className={cx('not-due')}>Chưa tới hạn </p>
                     ) : (
                         <OnTime id={id}/>
                     )}

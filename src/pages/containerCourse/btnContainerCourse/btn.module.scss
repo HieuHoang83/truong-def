@@ -13,21 +13,26 @@
 }
 
 .grid_btn:hover {
-    background-color: #0388b4;
+    background-color: #d7a5a5;
     color: white;
+    background-image: linear-gradient(to bottom right, rgb(85 85 223), #ff00006e);
 }
 
 .active {
-    background-color: #0388b4;
+    background-color: #d7a5a5;
     color: white;
+    background-image: linear-gradient(to bottom right, rgb(85 85 223), #ff00006e);
+    &:hover {
+        cursor: default;
+    }
 }
+
 @media only screen and (max-width: 723px) {
-   .grid_btn{
-    padding: 10px;
-    font-size: 18px;
-   }
+    .grid_btn {
+        padding: 10px;
+        font-size: 18px;
+    }
 }
 /* table */
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
-   
 }

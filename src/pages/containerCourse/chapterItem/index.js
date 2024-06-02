@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './chaoterItem.module.scss';
+import styles from './chapterItem.module.scss';
 import ChapterFile from './chapterFile';
 import { useState, useRef, useEffect } from 'react';
 import { database, get, set, child, ref, storage } from '~/pages/Login';
@@ -87,49 +87,60 @@ function ChapterItem({
     }, []);
 
     return (
-        <div className={cx('wrapper')} ref={wrapperref}>
-            <div className={cx('title-group')}>
-                <button
-                    className={cx('expand_content', 'expand_content_btn')}
-                    onClick={() => {
-                        if (more === true) {
-                            setMore(false);
-                            setShow(false);
-                            setIncrease(false);
-                        } else {
-                            setMore(true);
-
-                            setShow(true);
-                            setIncrease(false);
-                        }
-                    }}
-                >
-                    {more && <i className={cx('icon', 'fa-solid', 'fa-chevron-down')} />}
-                    {!more && <i className={cx('icon', 'fa-solid', 'fa-chevron-right')} />}
-                </button>
-                <h3 className={cx('topic')}>{name}</h3>
-                {type && job && (
-                    <button className={cx('modify_btn', 'modify_content_btn')} onClick={onchange}>
-                        Chỉnh sửa
-                    </button>
-                )}
-                {type && job && (
+        <>
+            <div className={cx('wrapper')} ref={wrapperref}>
+                <div className={cx('title-group')}>
                     <button
-                        className={cx('modify_btn', 'delete_content_btn')}
+                        className={cx('expand_content', 'expand_content_btn')}
                         onClick={() => {
-                            // eslint-disable-next-line
-                            setListChapter([]);
-                            ondelete();
-                            listAll(filesListRef).then((response) => {
-                                response.items.forEach((item) => {
-                                    deleteObject(item);
-                                });
-                            });
+                            if (more === true) {
+                                setMore(false);
+                                setShow(false);
+                                setIncrease(false);
+                            } else {
+                                setMore(true);
+
+                                setShow(true);
+                                setIncrease(false);
+                            }
+                            let parent = document.querySelector(`.${cx('title-group')}`).parentElement;
+
+                            while (parent) {
+                                const hasOverflow = getComputedStyle(parent).overflow;
+                                if (hasOverflow !== 'visible') {
+                                    console.log(hasOverflow, parent);
+                                }
+                                parent = parent.parentElement;
+                            }
                         }}
                     >
-                        Xóa
+                        {more && <i className={cx('icon', 'fa-solid', 'fa-chevron-down')} />}
+                        {!more && <i className={cx('icon', 'fa-solid', 'fa-chevron-right')} />}
                     </button>
-                )}
+                    <h3 className={cx('topic')}>{name}</h3>
+                    {type && job && (
+                        <button className={cx('modify_btn', 'modify_content_btn')} onClick={onchange}>
+                            Chỉnh sửa
+                        </button>
+                    )}
+                    {type && job && (
+                        <button
+                            className={cx('modify_btn', 'delete_content_btn')}
+                            onClick={() => {
+                                // eslint-disable-next-line
+                                setListChapter([]);
+                                ondelete();
+                                listAll(filesListRef).then((response) => {
+                                    response.items.forEach((item) => {
+                                        deleteObject(item);
+                                    });
+                                });
+                            }}
+                        >
+                            Xóa
+                        </button>
+                    )}
+                </div>
             </div>
             {show && (
                 <div className={cx('container')} ref={addelementref}>
@@ -314,7 +325,7 @@ function ChapterItem({
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 }
 

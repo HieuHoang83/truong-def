@@ -25,18 +25,20 @@
     width: 100%;
     height: 100%;
     filter: brightness(55%);
+    pointer-events: none;
 }
 
 .sec {
     position: relative;
     background: #0f4c75;
-    padding: 80px;
+    padding: 60px 80px;
     padding-bottom: 40px;
 }
 .sec_title {
     font-size: 3em;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
+    text-align: center;
 }
 
 .sec_content {
@@ -46,7 +48,10 @@
     font-family: sans-serif;
     line-height: 30px;
     text-align: justify;
+    text-indent: 50px;
+    margin-bottom: 10px;
 }
+
 .event {
     background: white;
     padding: 30px 10% 80px;
@@ -81,6 +86,9 @@
     padding: 0 0 1rem 0;
     text-align: left;
     margin-bottom: 5rem;
+}
+.sec {
+    background-image: url('https://github.com/HieuHoang83/truong-def/blob/b0ee4aa7089a49dc4aaf78c3db9e7f7fbd6b4317/src/img/imgvan.webp');
 }
 @media only screen and (max-width: 723px) {
     .textmain {

@@ -46,8 +46,8 @@ const DisplayList = (props) => {
                 }
             },
         );
-    }, []);
     // eslint-disable-next-line
+    }, []);
     let [show, setshow] = useState(false);
     let selectref = useRef();
 
@@ -65,8 +65,8 @@ const DisplayList = (props) => {
             >
                 <div className="display-content">
                     <div className="divimgcontent">
-                        <img src={linkimg[index]} className="display-img" alt="" />
-                        <div className="imgcontent">{props.list.nameCourse}</div>
+                        <img src={linkimg[index]} className="display-img" alt="" loading='lazy' />
+                        <p className="imgcontent">{props.list.nameCourse}</p>
                     </div>
 
                     <div className="display-content-detail">

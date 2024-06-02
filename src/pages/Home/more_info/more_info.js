@@ -21,9 +21,9 @@ const CardComponent = ({ title, content, imageUrl, text_more }) => {
                     <p className={styles.cardTitle}>{title}</p>
                     <p className={styles.cardDescription}>{content}</p>
                     <div className={styles.cardButton}>
-                        <div className={styles.button} onClick={toggleDetail}>
+                        <button className={styles.button} onClick={toggleDetail}>
                             More Info
-                        </div>
+                        </button>
                     </div>
                     {showDetail && <div className={styles.detailContent}>{text_more}</div>}
                 </div>

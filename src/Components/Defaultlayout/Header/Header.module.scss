@@ -1,26 +1,25 @@
 .wraper {
-    height: 61px;
-    background-color: var(--primary-color);
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 0px 1%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
+    padding: 0px;
+
     -webkit-user-select: none;
     user-select: none;
-    padding-bottom: 1px;
-    border-bottom: 1px solid #cccccc9e;
 }
 
 .inner {
-    width: 98%;
+    background-color: white;
+    background-image: linear-gradient(to bottom right, #173143, rgb(0 0 0 / 43%));
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
     display: flex;
     height: 60px;
     align-items: center;
     justify-content: space-between;
-    margin: 0px 1%;
+    padding: 0px 1%;
 }
 
 .logo {
@@ -54,10 +53,11 @@
         padding: 0px 10px;
         height: 60px;
         line-height: 60px;
-        transition: background-color 0.5s ease;
+        transition: background-image 0.5s ease;
+        display: block;
 
         &:hover {
-            background-color: #3282b8;
+            background-image: linear-gradient(to bottom right, rgb(85 85 223), #00f8ff6e);
         }
     }
 
@@ -68,11 +68,13 @@
     .page_Home,
     .page_Private,
     .page_Course {
+        background-image: linear-gradient(to bottom right, rgb(85 85 223), #00f8ff6e);
         background-color: #3282b8;
         cursor: default;
         user-select: none;
-
+        display: block;
         &:hover {
+            background-image: linear-gradient(to bottom right, rgb(85 85 223), #00f8ff6e);
             background-color: #3282b8;
         }
     }
@@ -232,7 +234,11 @@
 @media only screen and (max-width: 723px) {
     .wraper {
         width: 100%;
-        padding: 0px 5% 0px 0px;
+    }
+    .inner {
+        height: 40px;
+        margin: 0px;
+        padding: 0px 10px 0px 0px;
     }
 
     .control {
@@ -241,6 +247,8 @@
         .narbar__link-control--home {
             overflow: hidden;
             font-size: 1rem;
+            height: 40px;
+            line-height: 40px;
         }
     }
 
@@ -277,32 +285,26 @@
             animation: mess-Out 0.6s ease-in;
             position: fixed;
             z-index: 10;
-            top: 48px;
-            right: 0px;
-
-            border: solid 2px rgba(51, 51, 51, 0.1607843137);
-        }
-    }
-    .active {
-        .box-mess {
-            width: 350px;
-            background-color: white;
-            margin-top: 11px;
-            border-top: transparent;
-            border-radius: 2px;
-            margin-left: 6px;
-            color: #ccc;
-            animation: mess-Out 0.6s ease-in;
-            position: fixed;
-            z-index: 10;
-            top: 48px;
+            top: 30px;
             right: 0px;
 
             border: solid 2px rgba(51, 51, 51, 0.1607843137);
         }
         .box-notify {
-            right: -110px;
+            right: -93px;
+            top: -5px;
         }
+        .notify,
+        .mess {
+            font-size: 1.5rem;
+        }
+        .avatar {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .table-user {
+        top: 40px;
     }
 }
 

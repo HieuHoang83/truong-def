@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-clip: border-box;
     background-position: top center;
+    background-image: url('../../img/imgvan.webp');
 }
 .login {
     width: 450px;
@@ -130,6 +131,10 @@ input:-webkit-autofill:active {
 }
 /* mobiel */
 @media only screen and (max-width: 723px) {
+    .modul {
+        background-size: 650px 100%;
+        background-image: url('../../img/hinh-nen-dep-cho-dien-thoai_111220841.webp');
+    }
     .login {
         width: 100%;
         height: 100%;

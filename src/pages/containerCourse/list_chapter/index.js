@@ -70,10 +70,10 @@ function ItemChapter({ list, courseID, classCourse }) {
     return (
         <>
             {show && (
-                <div className={cx('wrapper')}>
+                <ul className={cx('wrapper')}>
                     {listchapter.map((chapter, index) => {
                         return (
-                            <div key={index + 'cccc'}>
+                            <li key={index} className={cx('li')}>
                                 <ChapterItem
                                     key={chapter.name}
                                     name={chapter.name}
@@ -308,10 +308,10 @@ function ItemChapter({ list, courseID, classCourse }) {
                                         Hủy
                                     </button>
                                 </div>
-                            </div>
+                            </li>
                         );
                     })}
-                </div>
+                </ul>
             )}
             {!show && (
                 <div className={cx('loadding')}>

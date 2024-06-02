@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from '../chaoterItem.module.scss';
+import styles from '../chapterItem.module.scss';
 import { memo } from 'react';
 import { UseStore } from '~/Store';
 import { useState } from 'react';

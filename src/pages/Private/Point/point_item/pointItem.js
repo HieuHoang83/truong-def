@@ -28,13 +28,13 @@ function PointItem() {
                                 TinChi_MH: snapshot.child(`${i}/Tinchi_MH`).val()[j],
                                 Diem_MH: snapshot.child(`${i}/Diem_MH`).val()[j],
                                 DiemCK_MH: snapshot.child(`${i}/DiemCK_MH`).val()[j],
-                                DiemTk_MH: snapshot.child(`${i}/DiemTK_MH`).val()[j]
+                                DiemTk_MH: snapshot.child(`${i}/DiemTK_MH`).val()[j],
                             });
                         }
                         semesterArray.push(newCourses);
-                        timeOfSemester.push(snapshot.child(`${i}/time`).val())
+                        timeOfSemester.push(snapshot.child(`${i}/time`).val());
                     }
-                    
+
                     setCourses(semesterArray);
                     setTime(timeOfSemester);
                     setshow(true);
@@ -43,7 +43,10 @@ function PointItem() {
         };
 
         fetchData();
+        // eslint-disable-next-line
     }, []);
+    // eslint-disable-next-line
+
     let fullnumber = 0;
     let fulldiemtb = 0;
     return (
@@ -71,9 +74,11 @@ function PointItem() {
                                 <div className={cx('block__semester')}>
                                     <div className={cx('semester__header')}>
                                         <h3>Học kỳ {index + 1}</h3>
-                                        <span className={cx('time-Upload')}>
-                                            Ngày cập nhật điểm các môn học: {time[index]}
-                                        </span>
+                                        <p className={cx('time-Upload')}>
+                                            Ngày cập nhật điểm các môn học:
+                                            <br />
+                                            {time[index]}
+                                        </p>
                                     </div>
                                     {
                                         <>

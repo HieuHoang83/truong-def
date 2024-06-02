@@ -14,7 +14,7 @@
 }
 .semester__header {
     margin-top: 20px;
-    height: 50px;
+    height: 70px;
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
@@ -22,6 +22,7 @@
 .time-Upload {
     color: black;
     padding-top: 10px;
+    line-height: 20px;
 }
 .semester__footer {
     position: relative;
@@ -70,12 +71,14 @@
         padding: 10px;
         margin: 0px;
     }
-    .point__body{
+    .point__body {
         padding-top: 0px;
         min-height: 460px;
     }
- }
- /* table */
- @media only screen and (min-width: 740px) and (max-width: 1024px) {
-    
- }
+    .semester__header {
+        height: 50px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
+}

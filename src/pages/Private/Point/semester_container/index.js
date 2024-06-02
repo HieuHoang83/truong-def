@@ -14,25 +14,25 @@ function Semester__body({ list }) {
         <div key="semester__body__body" className={cx('semester__body')}>
             <ul key="semester__body__list" className={cx('header', 'active')}>
                 <li key="Ma_MH" className={cx('Ma_MH', 'MH_item')}>
-                    MÃ MH
+                    <p> MÃ MH</p>
                 </li>
                 <li key="Ten_MH" className={cx('Ten_MH', 'MH_item')}>
-                    TÊN MÔN HỌC
+                    <p>TÊN MÔN HỌC</p>
                 </li>
                 <li key="Nhom_MH" className={cx('Nhom_MH', 'MH_item')}>
-                    NHÓM-TỔ
+                    <p>NHÓM-TỔ</p>
                 </li>
                 <li key="TinChi_MH" className={cx('TinChi_MH', 'MH_item')}>
-                    SỐ TC
+                    <p>SỐ TC</p>
                 </li>
                 <li key="Diem_MH" className={cx('Diem_MH', 'MH_item')}>
-                    ĐIỂM THÀNH PHẦN
+                    <p>ĐIỂM THÀNH PHẦN</p>
                 </li>
                 <li key="DiemCK_MH" className={cx('DiemCK_MH', 'MH_item')}>
-                    ĐIỂM THI
+                    <p>ĐIỂM THI</p>
                 </li>
                 <li key="DiemTk_MH" className={cx('DiemTk_MH', 'MH_item')}>
-                    TỔNG KẾT
+                    <p>TỔNG KẾT</p>
                 </li>
             </ul>
             {courses.map((item, index) => {

@@ -4,11 +4,6 @@
     margin-top: 20px;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
 .addSub {
     position: absolute;
     right: 20px;
@@ -27,10 +22,6 @@ a {
     }
 }
 
-li {
-    list-style: none;
-}
-
 .date_and_time {
     margin: 10px 0 10px 10px;
     padding-left: 10px;
@@ -46,13 +37,13 @@ li {
 .content-head {
     text-align: left;
     padding-left: 20px;
-    background-color: rgb(79, 94, 161);
     height: 50px;
     align-content: center;
-    background-color: rgb(210, 221, 150);
     display: flex;
     align-items: center;
     position: relative;
+    background: white;
+    background-image: linear-gradient(to bottom right, rgb(71 222 224), #6acfd86e);
 }
 
 .content__row {

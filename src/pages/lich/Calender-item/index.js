@@ -13,32 +13,26 @@ function Calender_item({ date, content = [{ name: '', time: '', class: '' }], ac
                     setshow(true);
                 }}
             >
-                <div className={cx('calender-item-day')}>{date}</div>
+                <p className={cx('calender-item-day')}>{date}</p>
                 {content[0] && (
-                    <div className={cx('wrap')}>
-                        <div className={cx('calender-item-title')}>{content[0].name}</div>
-                        <div className={cx('calender-item-time')}>{content[0].time}</div>
-                        <div className={cx('calender-item-class')}>{content[0].class}</div>
-                    </div>
+                    <p className={cx('wrap')}>
+                        <b className={cx('calender-item-title')}>{content[0].name}</b>
+                    </p>
                 )}
                 {content[1] && (
-                    <div className={cx('wrap')}>
-                        <div className={cx('calender-item-title')}>{content[1].name}</div>
-                        <div className={cx('calender-item-time')}>{content[1].time}</div>
-                        <div className={cx('calender-item-class')}>{content[1].class}</div>
-                    </div>
+                    <p className={cx('wrap')}>
+                        <b className={cx('calender-item-title')}>{content[1].name}</b>
+                    </p>
                 )}
                 {content[2] && (
-                    <div className={cx('wrap')}>
-                        <div className={cx('calender-item-title')}>{content[2].name}</div>
-                        <div className={cx('calender-item-time')}>{content[2].time}</div>
-                        <div className={cx('calender-item-class')}>{content[2].class}</div>
-                    </div>
+                    <p className={cx('wrap')}>
+                        <b className={cx('calender-item-title')}>{content[2].name}</b>
+                    </p>
                 )}
                 {content[3] && (
-                    <div className={cx('wrap')}>
+                    <p className={cx('wrap')}>
                         <div className={cx('calender-item-vv')}>...</div>
-                    </div>
+                    </p>
                 )}
             </div>
             {show && (
@@ -52,15 +46,13 @@ function Calender_item({ date, content = [{ name: '', time: '', class: '' }], ac
                         >
                             <i className="fa-solid fa-xmark"></i>
                         </div>
-                        <div className={cx('modal-content-header')}>{date}</div>
+                        <p className={cx('modal-content-header')}>{date}</p>
 
                         {content.map((item, index) => {
                             return (
-                                <div className={cx('wrap-modal')} key={index}>
-                                    <div className={cx('calender-item-title')}>{item.name} : </div>
-                                    <div className={cx('calender-item-time')}>{item.time}</div>
-                                    <div className={cx('calender-item-class')}>{item.class}</div>
-                                </div>
+                                <p className={cx('wrap-modal')} key={index}>
+                                    <b className={cx('calender-item-title')}>{item.name} : </b> {item.time} {item.class}
+                                </p>
                             );
                         })}
                     </div>

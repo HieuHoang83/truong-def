@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './subMH.module.scss';
-import SubItem from '~/Components/Defaultlayout/SubItem/SubItem';
+import SubItem from './SubItem/SubItem';
 import { get, child, set, ref, database, remove } from '~/pages/Login';
 import { UseStore } from '~/Store';
 const cx = classNames.bind(styles);
@@ -37,7 +37,10 @@ const SubMH = () => {
             get(child(dbRef, `accounts/${standardizeEmail}/sendTo`)).then((snapshot) => {
                 if (snapshot.exists()) {
                     for (let i = 0; i < snapshot.size; i++) {
-                        set(child(dbRef, `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${subItems.length}`), formData);
+                        set(
+                            child(dbRef, `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${subItems.length}`),
+                            formData,
+                        );
                     }
                 }
             });
@@ -85,11 +88,11 @@ const SubMH = () => {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('date_and_time')}>
-                <span id="current-date">Time reach: {dateString}</span>
+                <p id="current-date">Time reach: {dateString}</p>
             </div>
             <div className={cx('content')}>
                 <div className={cx('content-head')}>
-                    Danh sách đợt đăng ký:
+                    <p>Danh sách đợt đăng ký:</p>
                     {type === 'admin' && (
                         <button className={cx('addSub')} onClick={() => setModalOpen(!modalOpen)}>
                             {modalOpen ? 'Đóng' : 'Thêm đợt đăng ký'}
@@ -99,14 +102,27 @@ const SubMH = () => {
                 <div>
                     {!modalOpen && (
                         <ul className={cx('content__row')}>
-                            <li className={cx('content-item', 'STT')}>Stt</li>
-                            <li className={cx('content-item', 'desc')}>Mô tả</li>
+                            <li className={cx('content-item', 'STT')}>
+                                <p>Stt</p>{' '}
+                            </li>
+                            <li className={cx('content-item', 'desc')}>
+                                <p> Mô tả </p>{' '}
+                            </li>
                             <li className={cx('content-item', 'time')}>
-                                <div className={cx('content-item--first')}>Bắt đầu</div>
-                                <div className={cx('content-item--second')}> Kết thúc </div>
+                                <div className={cx('content-item--first')}>
+                                    <p>Bắt đầu </p>
+                                </div>
+                                <div className={cx('content-item--second')}>
+                                    {' '}
+                                    <p>Kết thúc </p>{' '}
+                                </div>
                             </li>
                             <li className={cx('content-item', 'regis')}></li>
-                            {type === 'admin' && (<li className={cx('delete')} >Xóa</li>)}
+                            {type === 'admin' && (
+                                <li className={cx('delete')}>
+                                    <p> Xóa </p>
+                                </li>
+                            )}
                         </ul>
                     )}
                 </div>
@@ -151,10 +167,17 @@ const SubMH = () => {
                             get(child(dbRef, `accounts/${standardizeEmail}/sendTo`)).then((snapshot) => {
                                 if (snapshot.exists()) {
                                     for (let i = 0; i < snapshot.size; i++) {
-                                        remove(child(dbRef, `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${subItems.length}`));
+                                        remove(
+                                            child(
+                                                dbRef,
+                                                `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${
+                                                    subItems.length
+                                                }`,
+                                            ),
+                                        );
                                     }
                                 }
-                            })
+                            });
                             setSubItems([...subItems]);
                         }}
                         STT={index + 1}

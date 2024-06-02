@@ -3,13 +3,6 @@
     font-size: 18px;
     margin-top: 20px;
 }
-a {
-    text-decoration: none;
-    color: black;
-}
-li {
-    list-style: none;
-}
 
 .date_and_time {
     margin: 10px 0 10px 10px;
@@ -61,6 +54,7 @@ li {
 .content__row .regis {
     flex: 2;
     text-align: center;
+    position: relative;
 }
 .content__row .regis a {
     border: 1px solid rgb(169, 117, 117);
@@ -79,9 +73,64 @@ li {
     line-height: 25px;
     display: flex;
     align-items: center;
-    min-width: 88px;
+    min-width: 90px;
 }
 .overtime {
     cursor: default !important;
     color: red;
+}
+.delete {
+    margin-right: 30px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 723px) {
+    .content-item--second {
+        line-height: 25px;
+        display: flex;
+        align-items: center;
+        min-width: 110px;
+    }
+    .content__row .STT {
+        flex: 1;
+        text-align: center;
+    }
+    .content__row .desc {
+        flex: 4;
+        margin-left: 10px;
+    }
+    .content__row .time {
+        flex: 2;
+        display: flex;
+        justify-content: space-between;
+    }
+    .content__row .regis a {
+        border: 1px solid rgb(169, 117, 117);
+        background-color: rgb(168, 231, 200);
+        cursor: pointer;
+        padding: 0px 6px;
+        margin-top: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: -18px;
+        width: 65px;
+        right: 5px;
+        font-size: 11px;
+    }
+    .overtime {
+        cursor: pointer;
+        padding: 0px 6px;
+        margin-top: 10px;
+        border-radius: 10px;
+        position: absolute;
+        top: -18px;
+        width: 65px;
+        right: 5px;
+        font-size: 11px;
+    }
+    .delete {
+        margin-right: 10px;
+    }
+}
+/* table */
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
 }

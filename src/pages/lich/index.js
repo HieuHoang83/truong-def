@@ -64,7 +64,7 @@ function Calender() {
                                     /**/ arr[i][offset].content.push({
                                         name: matches[1].trim(),
                                         time: matches[2].trim(),
-                                        class: matches[3].trim()
+                                        class: matches[3].trim(),
                                     });
                                 }
                             }
@@ -87,7 +87,7 @@ function Calender() {
             {show && (
                 <div className={cx('body')}>
                     <div className={cx('header')}>
-                        <div className={cx('title')}>Thời khoá biểu</div>
+                        <h1 className={cx('title')}>Thời khoá biểu</h1>
                     </div>
                     <div className={cx('control')}>
                         <button
@@ -101,7 +101,8 @@ function Calender() {
                             }}
                         >
                             <i className={cx('icon-month', 'fa-solid', 'fa-caret-left')}></i>
-                            Tháng {monthpre === 12 ? 12 : monthpre + 1}
+
+                            <p>Tháng {monthpre === 12 ? 12 : monthpre + 1}</p>
                         </button>
 
                         <button
@@ -114,20 +115,34 @@ function Calender() {
                                 }
                             }}
                         >
-                            <div style={{ width: '120px' }}>Tháng {month === 11 ? 1 : month + 2}</div>
+                            <p style={{ width: '120px' }}>Tháng {month === 11 ? 1 : month + 2}</p>
                             <i className={cx('icon-month', 'fa-solid', 'fa-caret-right')}></i>
                         </button>
                     </div>
-                    <div className={cx('title')}> Tháng {month + 1} (2024) </div>
+                    <h2 className={cx('title')}> Tháng {month + 1} (2024) </h2>
 
                     <div className={cx('calender-number')}>
-                        <div className={cx('day')}>T2</div>
-                        <div className={cx('day')}>T3</div>
-                        <div className={cx('day')}>T4</div>
-                        <div className={cx('day')}>T5</div>
-                        <div className={cx('day')}>T6</div>
-                        <div className={cx('day')}>T7</div>
-                        <div className={cx('day')}>CN</div>
+                        <div className={cx('day')}>
+                            <p>T2</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>T3</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>T4</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>T5</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>T6</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>T7</p>
+                        </div>
+                        <div className={cx('day')}>
+                            <p>CN</p>
+                        </div>
                     </div>
 
                     <div className={cx('calender')}>
@@ -143,7 +158,6 @@ function Calender() {
                                     key={`item.day-${index}`}
                                     date={item.day}
                                     content={item.content}
-
                                     active={index - offset === x.getDate() - 1 && month === x.getMonth()}
                                 />
                             );

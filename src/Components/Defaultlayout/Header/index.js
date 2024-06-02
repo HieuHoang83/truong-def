@@ -123,82 +123,89 @@ function Header({ Active = true, Private = false, Course = false }) {
     return (
         <div className={cx('wraper')}>
             <div className={cx('inner')}>
-                <div className={cx('control')}>
-                    <Link
-                        className={cx('logo')}
-                        to="/Home"
-                        onClick={() => {
-                            setName({
-                                page_Home: true,
-                                page_Private: false,
-                                page_Course: false,
-                            });
-                            if (!page_Home) {
-                                SetIsmess(false);
-                                SetIsnotify(false);
-                            }
-                        }}
-                    >
-                        <img className={cx('narbar__list-item-img')} src={def} alt="" />
-                    </Link>
-                    <Link
-                        to="/Home"
-                        className={cx('narbar__link-control--home', { page_Home })}
-                        onClick={() => {
-                            setName({
-                                page_Home: true,
-                                page_Private: false,
-                                page_Course: false,
-                            });
-                            if (!page_Home) {
-                                SetIsmess(false);
-                                SetIsnotify(false);
-                            }
-                        }}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        to="/private"
-                        className={cx('narbar__link-control--info', { page_Private })}
-                        onClick={() => {
-                            setName({
-                                page_Home: false,
-                                page_Private: true,
-                                page_Course: false,
-                            });
+                <ul className={cx('control')}>
+                    <li>
+                        <Link
+                            className={cx('logo')}
+                            to="/Home"
+                            onClick={() => {
+                                setName({
+                                    page_Home: true,
+                                    page_Private: false,
+                                    page_Course: false,
+                                });
+                                if (!page_Home) {
+                                    SetIsmess(false);
+                                    SetIsnotify(false);
+                                }
+                            }}
+                        >
+                            <img className={cx('narbar__list-item-img')} src={def} alt="" />
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/Home"
+                            className={cx('narbar__link-control--home', { page_Home })}
+                            onClick={() => {
+                                setName({
+                                    page_Home: true,
+                                    page_Private: false,
+                                    page_Course: false,
+                                });
+                                if (!page_Home) {
+                                    SetIsmess(false);
+                                    SetIsnotify(false);
+                                }
+                            }}
+                        >
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/private"
+                            className={cx('narbar__link-control--info', { page_Private })}
+                            onClick={() => {
+                                setName({
+                                    page_Home: false,
+                                    page_Private: true,
+                                    page_Course: false,
+                                });
 
-                            if (!page_Private) {
-                                SetIsmess(false);
-                                SetIsnotify(false);
-                            }
-                        }}
-                    >
-                        <span className={cx('mobile')}>Information</span>
-                    </Link>
+                                if (!page_Private) {
+                                    SetIsmess(false);
+                                    SetIsnotify(false);
+                                }
+                            }}
+                        >
+                            <span className={cx('mobile')}>Information</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/course"
+                            className={cx('narbar__link-control--course', { page_Course })}
+                            onClick={() => {
+                                setName({
+                                    page_Home: false,
+                                    page_Private: false,
+                                    page_Course: true,
+                                });
+                                if (!page_Course) {
+                                    SetIsmess(false);
+                                    SetIsnotify(false);
+                                }
+                            }}
+                        >
+                            Course
+                        </Link>
+                    </li>
+                </ul>
 
-                    <Link
-                        to="/course"
-                        className={cx('narbar__link-control--course', { page_Course })}
-                        onClick={() => {
-                            setName({
-                                page_Home: false,
-                                page_Private: false,
-                                page_Course: true,
-                            });
-                            if (!page_Course) {
-                                SetIsmess(false);
-                                SetIsnotify(false);
-                            }
-                        }}
-                    >
-                        Course
-                    </Link>
-                </div>
-
-                <div className={cx('active')}>
+                <ul className={cx('active')}>
                     {type !== 'admin' && (
-                        <div className={cx('notify')}>
+                        <li className={cx('notify')}>
                             <span>
                                 <Tippy
                                     interactive="true"
@@ -363,11 +370,11 @@ function Header({ Active = true, Private = false, Course = false }) {
                                     32
                                 </div>
                             )}
-                        </div>
+                        </li>
                     )}
 
                     {type !== 'admin' && (
-                        <div className={cx('mess')}>
+                        <li className={cx('mess')}>
                             <i
                                 className="fa-regular fa-comment"
                                 onClick={() => {
@@ -389,10 +396,10 @@ function Header({ Active = true, Private = false, Course = false }) {
                                     </ProperWrapper>
                                 </div>
                             )}
-                        </div>
+                        </li>
                     )}
 
-                    <div className={cx('user')}>
+                    <li className={cx('user')}>
                         <img
                             src="https://bloganchoi.com/wp-content/uploads/2022/02/avatar-trang-y-nghia.jpeg"
                             alt=""
@@ -449,8 +456,8 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 Đăng xuất
                             </Link>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </div>
     );

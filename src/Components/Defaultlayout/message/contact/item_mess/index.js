@@ -4,7 +4,7 @@ const cx = classNames.bind(styles);
 function ContactIteam({ name, content, day, time }) {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('header')}>{day}</div>
+            <p className={cx('header')}>{day}</p>
             <div className={cx('body')}>
                 <div className={cx('contact')}>
                     <img
@@ -12,10 +12,10 @@ function ContactIteam({ name, content, day, time }) {
                         alt="avatar"
                         className={cx('avatar')}
                     />
-                    <div className={cx('name')}>{name}</div>
-                    <div className={cx('time')}>{time}</div>
+                    <p className={cx('name')}>{name}</p>
+                    <p className={cx('time')}>{time}</p>
                 </div>
-                <div className={cx('content')}>{content}</div>
+                <p className={cx('content')}>{content}</p>
                 <div className={cx('arrow_left')}></div>
             </div>
         </div>
