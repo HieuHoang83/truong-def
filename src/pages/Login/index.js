@@ -10,7 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/fir
 import { getDatabase, ref, child, get } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
 import { getStorage } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-storage.js';
 import App from '~/App';
-//nhanh 1
+// nhanh 1
 const firebaseConfig = {
     apiKey: 'AIzaSyCraJtOXkitjV4HXKH9ntGGI9q-UEv4Y4k',
     authDomain: 'def-elearning.firebaseapp.com',
@@ -19,7 +19,6 @@ const firebaseConfig = {
     messagingSenderId: '1090322590908',
     appId: '1:1090322590908:web:1914f2492fc6598cfb74b9',
 };
-
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const database = getDatabase(app);
