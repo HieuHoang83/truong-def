@@ -10,7 +10,7 @@ import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/fir
 import { getDatabase, ref, child, get } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js';
 import { getStorage } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-storage.js';
 import App from '~/App';
-
+// nhanh master
 const firebaseConfig = {
     apiKey: 'AIzaSyCraJtOXkitjV4HXKH9ntGGI9q-UEv4Y4k',
     authDomain: 'def-elearning.firebaseapp.com',
