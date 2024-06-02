@@ -44,6 +44,7 @@ function DefaultLayout({ children }) {
     return (
         <>
             <Header></Header>
+
             {show && (
                 <div className={cx('wrapper')}>
                     <a className={cx('up', 'display__none')} href="#">
