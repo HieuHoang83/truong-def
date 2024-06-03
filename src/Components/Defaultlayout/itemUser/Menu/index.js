@@ -10,12 +10,15 @@ function Menu({ children }) {
     const MenuItem = [
         {
             content: 'Đăng ký môn',
+            to: '/course/addcourse',
         },
         {
             content: 'Lịch',
+            to: '/calender',
         },
         {
             content: 'Đăng xuất',
+            to: '/',
         },
     ];
     return (
@@ -27,7 +30,7 @@ function Menu({ children }) {
                 <div className={cx('menu')} tabIndex="-1" {...attrs}>
                     <ProperWrapper className={cx('propperwrapper')}>
                         {MenuItem.map((item) => {
-                            return <ItemMenu key={item.content} content={item.content} icon={item.icon} />;
+                            return <ItemMenu key={item.content} content={item.content} icon={item.icon} to={item.to} />;
                         })}
                     </ProperWrapper>
                 </div>

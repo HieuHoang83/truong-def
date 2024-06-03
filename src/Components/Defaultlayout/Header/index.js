@@ -121,87 +121,79 @@ function Header({ Active = true, Private = false, Course = false }) {
     });
 
     return (
-        <div className={cx('wraper')}>
+        <header className={cx('wraper')}>
             <div className={cx('inner')}>
-                <ul className={cx('control')}>
-                    <li>
-                        <Link
-                            className={cx('logo')}
-                            to="/Home"
-                            onClick={() => {
-                                setName({
-                                    page_Home: true,
-                                    page_Private: false,
-                                    page_Course: false,
-                                });
-                                if (!page_Home) {
-                                    SetIsmess(false);
-                                    SetIsnotify(false);
-                                }
-                            }}
-                        >
-                            <img className={cx('narbar__list-item-img')} src={def} alt="" />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/Home"
-                            className={cx('narbar__link-control--home', { page_Home })}
-                            onClick={() => {
-                                setName({
-                                    page_Home: true,
-                                    page_Private: false,
-                                    page_Course: false,
-                                });
-                                if (!page_Home) {
-                                    SetIsmess(false);
-                                    SetIsnotify(false);
-                                }
-                            }}
-                        >
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/private"
-                            className={cx('narbar__link-control--info', { page_Private })}
-                            onClick={() => {
-                                setName({
-                                    page_Home: false,
-                                    page_Private: true,
-                                    page_Course: false,
-                                });
+                <nav className={cx('control')}>
+                    <Link
+                        className={cx('logo')}
+                        to="/Home"
+                        onClick={() => {
+                            setName({
+                                page_Home: true,
+                                page_Private: false,
+                                page_Course: false,
+                            });
+                            if (!page_Home) {
+                                SetIsmess(false);
+                                SetIsnotify(false);
+                            }
+                        }}
+                    >
+                        <img className={cx('narbar__list-item-img')} src={def} alt="" />
+                    </Link>
+                    <Link
+                        to="/Home"
+                        className={cx('narbar__link-control--home', { page_Home })}
+                        onClick={() => {
+                            setName({
+                                page_Home: true,
+                                page_Private: false,
+                                page_Course: false,
+                            });
+                            if (!page_Home) {
+                                SetIsmess(false);
+                                SetIsnotify(false);
+                            }
+                        }}
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        to="/private"
+                        className={cx('narbar__link-control--info', { page_Private })}
+                        onClick={() => {
+                            setName({
+                                page_Home: false,
+                                page_Private: true,
+                                page_Course: false,
+                            });
 
-                                if (!page_Private) {
-                                    SetIsmess(false);
-                                    SetIsnotify(false);
-                                }
-                            }}
-                        >
-                            <span className={cx('mobile')}>Information</span>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            to="/course"
-                            className={cx('narbar__link-control--course', { page_Course })}
-                            onClick={() => {
-                                setName({
-                                    page_Home: false,
-                                    page_Private: false,
-                                    page_Course: true,
-                                });
-                                if (!page_Course) {
-                                    SetIsmess(false);
-                                    SetIsnotify(false);
-                                }
-                            }}
-                        >
-                            Course
-                        </Link>
-                    </li>
-                </ul>
+                            if (!page_Private) {
+                                SetIsmess(false);
+                                SetIsnotify(false);
+                            }
+                        }}
+                    >
+                        <span className={cx('mobile')}>Information</span>
+                    </Link>
+                    <Link
+                        to="/course"
+                        className={cx('narbar__link-control--course', { page_Course })}
+                        onClick={() => {
+                            setName({
+                                page_Home: false,
+                                page_Private: false,
+                                page_Course: true,
+                            });
+                            if (!page_Course) {
+                                SetIsmess(false);
+                                SetIsnotify(false);
+                            }
+                        }}
+                    >
+                        Course
+                    </Link>
+                </nav>
 
                 <ul className={cx('active')}>
                     {type !== 'admin' && (
@@ -459,22 +451,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                     </li>
                 </ul>
             </div>
-        </div>
+        </header>
     );
 }
 export default Header;
-// {
-//     <div className={cx('active')}>
-//         <Button size="medium" text>
-//             Upload
-//         </Button>
-//         <Button size="medium" primary>
-//             Log in
-//         </Button>
-//         <Menu>
-//             <button className={cx('more-btn')}>
-//                 <i class="fa-solid fa-ellipsis-vertical"></i>
-//             </button>
-//         </Menu>
-//     </div>;
-// }
