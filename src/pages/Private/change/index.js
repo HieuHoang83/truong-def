@@ -172,10 +172,10 @@ function Change(onsave) {
         }
     };
     return (
-        <form className={cx('info-item', 'change-info')}>
+        <main className={cx('info-item', 'change-info')}>
             <h1 className={cx('change-info__decoration')}> Cập nhật thông tin liên lạc</h1>
             <div className={cx('change-info__body')}>
-                <div className={cx('change-info__me')}>
+                <section className={cx('change-info__me')}>
                     <h2 className={cx('change-info__me-header')}>Thay đổi thông tin cá nhân</h2>
                     <div className={cx('change-info__me-block')}>
                         <h3 className={cx('change-info__label')}>Số điện thoại</h3>
@@ -213,8 +213,8 @@ function Change(onsave) {
                             placeholder="Link facebook, instagram..."
                         />
                     </div>
-                </div>
-                <div className={cx('change-info__family')}>
+                </section>
+                <section className={cx('change-info__family')}>
                     <h2 className={cx('change-info__me-header')}>Thay đổi thông tin người thân</h2>
                     <div className={cx('change-info__me-block')}>
                         <h3 className={cx('change-info__label')}>Tên người thân(1)</h3>
@@ -252,15 +252,12 @@ function Change(onsave) {
                             ref={phoneParent2ref}
                         />
                     </div>
-                </div>
-                <input
-                    type="submit"
-                    className={cx('change-info__btn')}
-                    value="Lưu thông tin"
-                    onClick={(e) => handleSave(e)}
-                />
+                </section>
+                <button className={cx('change-info__btn')} onClick={(e) => handleSave(e)}>
+                    Lưu thông tin
+                </button>
             </div>
-        </form>
+        </main>
     );
 }
 

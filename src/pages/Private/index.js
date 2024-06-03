@@ -16,7 +16,7 @@ function Pravate() {
     let { todos } = state;
     let [type, setType] = useState(todos.job);
     let [nameCard] = useState(todos.nameCard);
-    
+
     function typePerson(type) {
         if (type === 'student') return true;
         else if (type === 'teacher') return false;
@@ -29,7 +29,7 @@ function Pravate() {
         get(child(dbRef, `accounts/${standardizeEmail}/infor/job`)).then((snapshot) => {
             if (snapshot.exists()) {
                 setType(snapshot.val());
-                
+
                 setBreadlist([
                     {
                         name: `Thông tin ${nameCard}`,
@@ -138,7 +138,7 @@ function Pravate() {
         <>
             {show && type !== 'admin' && (
                 <div className={cx('wrapper')}>
-                    <div className={cx('breadcrum')}>
+                    <nav className={cx('breadcrum')}>
                         {
                             // eslint-disable-next-line
                             breadlist.map((item, index) => {
@@ -203,7 +203,7 @@ function Pravate() {
                                 }
                             })
                         }
-                    </div>
+                    </nav>
                     <Component onsave={onsave} onchange={onchange} />
                 </div>
             )}
