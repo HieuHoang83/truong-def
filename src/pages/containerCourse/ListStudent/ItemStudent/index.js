@@ -79,7 +79,7 @@ function ItemStudent({ MSSV, Name, Diem, xoa, Chinhsua, index, sua = true, type,
                             :<input type="text" placeholder="Nhập điểm mới" ref={Thiref} className={cx('iteminput')} />
                         </div>
                     </th>
-                    <th colSpan="2" className={cx('th', 'notcopy', 'chinhsua')}>
+                    <th className={cx('th', 'notcopy', 'chinhsua')}>
                         <div
                             className={classes}
                             onClick={() => {
@@ -142,6 +142,7 @@ function ItemStudent({ MSSV, Name, Diem, xoa, Chinhsua, index, sua = true, type,
                             Hủy
                         </div>
                     </th>
+                    <th></th>
                 </tr>
             )}
         </>

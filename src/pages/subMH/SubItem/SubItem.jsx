@@ -6,7 +6,7 @@ import { UseStore } from '~/Store';
 
 const cx = classNames.bind(styles);
 
-const SubItem = ({id, title, starttime, starttime2, endtime, endtime2, ondelete, STT }) => {
+const SubItem = ({ id, title, starttime, starttime2, endtime, endtime2, ondelete, STT }) => {
     let [state] = UseStore();
     let { todos } = state;
     let [type] = useState(todos.job);
@@ -28,42 +28,42 @@ const SubItem = ({id, title, starttime, starttime2, endtime, endtime2, ondelete,
             ondelete();
         }
     });
-    
+
     const now = new Date();
     const registrationOver = now >= endDate;
     const registrationNotYetDue = now <= startDate;
 
     return (
-        <div>
-            <ul className={cx('content__row', 'content__row_item')}>
-                <li className={cx('content-item', 'STT')}><p>{STT}</p></li>
-                <li className={cx('content-item', 'desc')}><p>{title}</p></li>
-                <li className={cx('content-item', 'time')}>
-                    <p className={cx('content-item--first')}>
-                        {startParts[2] + '-' + startParts[1] + '-' + startParts[0]}
-                        <br />
-                        {starttime2}
-                    </p>
-                    <p className={cx('content-item--second')}>
-                        {endParts[2] + '-' + endParts[1] + '-' + endParts[0]} <br />
-                        {endtime2}
-                    </p>
-                </li>
-                <li className={cx('content-item', 'regis')}>
-                    {registrationOver ? (
-                        <p className={cx('overtime')}>Quá hạn</p>
-                    ) : registrationNotYetDue ? (
-                        <p className={cx('not-due')}>Chưa tới hạn </p>
-                    ) : (
-                        <OnTime id={id}/>
-                    )}
-                </li>
-                {type === 'admin' && (<li className={cx('delete')} onClick={ondelete}>
-                    <i className={cx('icon-delete', 'fa-regular', 'fa-trash-can')}></i>
-                </li>)}
-            </ul>
-        </div>
+        <tr>
+            <td>{STT}</td>
+            <th className={cx('title')}>{title}</th>
+            <td>
+                {startParts[2] + '-' + startParts[1] + '-' + startParts[0]}
+                <br />
+                {starttime2}
+            </td>
+            <td>
+                {endParts[2] + '-' + endParts[1] + '-' + endParts[0]} <br />
+                {endtime2}
+            </td>
+            <td className={cx('content-item', 'regis')}>
+                {registrationOver ? (
+                    <p className={cx('overtime')}>Quá hạn</p>
+                ) : registrationNotYetDue ? (
+                    <p className={cx('not-due')}>Chưa tới hạn </p>
+                ) : (
+                    <OnTime id={id} />
+                )}
+            </td>
+            {type === 'admin' && (
+                <td>
+                    <div className={cx('delete')} onClick={ondelete}>
+                        <i className={cx('fa-regular', 'fa-trash-can')}></i>
+                    </div>
+                </td>
+            )}
+        </tr>
     );
-}
+};
 
 export default SubItem;

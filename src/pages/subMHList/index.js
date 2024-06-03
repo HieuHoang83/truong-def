@@ -90,6 +90,14 @@ function SubMHList() {
                         {!ischoice && (
                             <div className={cx('box_search')}>
                                 <div className={cx('search-content')}>
+                                    <button
+                                        className={cx('search__icon')}
+                                        onClick={() => {
+                                            document.querySelector(`.${cx('search__input')}`).focus();
+                                        }}
+                                    >
+                                        <i className="fa-solid fa-magnifying-glass "></i>
+                                    </button>
                                     <input
                                         value={Input_value}
                                         onChange={(e) => {
@@ -109,14 +117,6 @@ function SubMHList() {
                                         }}
                                     >
                                         <i className="fa-solid fa-circle-xmark"></i>
-                                    </button>
-                                    <button
-                                        className={cx('search__icon')}
-                                        onClick={() => {
-                                            document.querySelector(`.${cx('search__input')}`).focus();
-                                        }}
-                                    >
-                                        <i className="fa-solid fa-magnifying-glass "></i>
                                     </button>
                                 </div>
                             </div>

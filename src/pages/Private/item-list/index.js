@@ -16,7 +16,7 @@ function ItemList({ index, MSSV, name, faculty, ondelete, onchange }) {
                 <td>{name}</td>
                 <td>{faculty}</td>
                 <td>
-                    <button onClick={ondelete}>
+                    <button className={cx('sua')} onClick={ondelete}>
                         <i className={cx('icon-delete', 'fas', 'fa-trash')}></i>
                     </button>
                 </td>

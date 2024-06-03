@@ -127,7 +127,7 @@ const SinhVien = () => {
             <div className={cx('table_section')}>
                 <table className={cx("dataTable")}>
                     <thead>
-                        <tr>
+                        <tr >
                             <th className={cx('stt')}> STT</th>
                             <th className={cx('mssv')}>MSSV</th>
                             <th className={cx('name')}>Họ và Tên</th>

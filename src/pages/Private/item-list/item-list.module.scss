@@ -75,12 +75,6 @@
     height: 500px;
 }
 
-tr:hover td {
-    color: #2caddc;
-    cursor: pointer;
-    background-color: #f6f9fc;
-}
-
 .stt {
     width: 100px;
 }
@@ -97,13 +91,7 @@ tr:hover td {
     width: 100px;
 }
 /* delete */
-table button {
-    color: red;
-    background-color: #e1e1e1;
-}
-table button:hover {
-    background-color: #bab9b9;
-}
+
 .form-add-sv {
     display: flex;
 }
@@ -120,6 +108,9 @@ table button:hover {
     background-color: transparent;
     font-size: 15px;
     font-weight: 600;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
     &:hover {
         font-size: 15px;
 

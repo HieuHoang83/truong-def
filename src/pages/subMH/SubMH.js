@@ -99,33 +99,7 @@ const SubMH = () => {
                         </button>
                     )}
                 </div>
-                <div>
-                    {!modalOpen && (
-                        <ul className={cx('content__row')}>
-                            <li className={cx('content-item', 'STT')}>
-                                <p>Stt</p>{' '}
-                            </li>
-                            <li className={cx('content-item', 'desc')}>
-                                <p> Mô tả </p>{' '}
-                            </li>
-                            <li className={cx('content-item', 'time')}>
-                                <div className={cx('content-item--first')}>
-                                    <p>Bắt đầu </p>
-                                </div>
-                                <div className={cx('content-item--second')}>
-                                    {' '}
-                                    <p>Kết thúc </p>{' '}
-                                </div>
-                            </li>
-                            <li className={cx('content-item', 'regis')}></li>
-                            {type === 'admin' && (
-                                <li className={cx('delete')}>
-                                    <p> Xóa </p>
-                                </li>
-                            )}
-                        </ul>
-                    )}
-                </div>
+
                 {modalOpen && (
                     <div className={cx('input')}>
                         <input
@@ -146,43 +120,64 @@ const SubMH = () => {
                         <button onClick={handleAddSubItem}>Lưu</button>
                     </div>
                 )}
-                {subItems.map((item, index) => (
-                    <SubItem
-                        key={index}
-                        id={item.id}
-                        title={item.title}
-                        starttime={item.starttime}
-                        starttime2={item.starttime2}
-                        endtime={item.endtime}
-                        endtime2={item.endtime2}
-                        ondelete={() => {
-                            subItems.splice(index, 1);
-                            let reverse = [];
-                            for (let i = subItems.length - 1; i >= 0; i--) {
-                                reverse.push(subItems[i]);
-                            }
-                            // delete to admin
-                            set(child(dbRef, `accounts/${standardizeEmail}/courses/register/regPeriod/`), reverse);
-                            // delete to student
-                            get(child(dbRef, `accounts/${standardizeEmail}/sendTo`)).then((snapshot) => {
-                                if (snapshot.exists()) {
-                                    for (let i = 0; i < snapshot.size; i++) {
-                                        remove(
-                                            child(
-                                                dbRef,
-                                                `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${
-                                                    subItems.length
-                                                }`,
-                                            ),
-                                        );
+                <table className={cx('table')}>
+                    <thead>
+                        <tr>
+                            <th>Stt</th>
+                            <th>Mô tả</th>
+                            <th>Bắt đầu</th>
+                            <th>Kết thúc</th>
+                            <th>Đăng ký</th>
+                            {type === 'admin' && (
+                                <th className={cx('delete')}>
+                                    <p> Xóa </p>
+                                </th>
+                            )}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {subItems.map((item, index) => (
+                            <SubItem
+                                key={index}
+                                id={item.id}
+                                title={item.title}
+                                starttime={item.starttime}
+                                starttime2={item.starttime2}
+                                endtime={item.endtime}
+                                endtime2={item.endtime2}
+                                ondelete={() => {
+                                    subItems.splice(index, 1);
+                                    let reverse = [];
+                                    for (let i = subItems.length - 1; i >= 0; i--) {
+                                        reverse.push(subItems[i]);
                                     }
-                                }
-                            });
-                            setSubItems([...subItems]);
-                        }}
-                        STT={index + 1}
-                    />
-                ))}
+                                    // delete to admin
+                                    set(
+                                        child(dbRef, `accounts/${standardizeEmail}/courses/register/regPeriod/`),
+                                        reverse,
+                                    );
+                                    // delete to student
+                                    get(child(dbRef, `accounts/${standardizeEmail}/sendTo`)).then((snapshot) => {
+                                        if (snapshot.exists()) {
+                                            for (let i = 0; i < snapshot.size; i++) {
+                                                remove(
+                                                    child(
+                                                        dbRef,
+                                                        `accounts/${snapshot.val()[i]}/courses/register/regPeriod/${
+                                                            subItems.length
+                                                        }`,
+                                                    ),
+                                                );
+                                            }
+                                        }
+                                    });
+                                    setSubItems([...subItems]);
+                                }}
+                                STT={index + 1}
+                            />
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );

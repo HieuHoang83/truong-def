@@ -7,7 +7,7 @@
 
 /* header */
 .table {
-    width: 1070px;
+    width: 1061px;
 }
 .dataTable {
     border-collapse: collapse;
@@ -23,17 +23,12 @@
     color: white;
     font-size: 30px;
 }
-button {
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 10px;
-}
+
 .add_student {
     padding: 10px 20px;
     color: white;
     background-color: rgb(38, 105, 198);
+    border: none;
 }
 .add_student:hover {
     background-color: rgb(0, 0, 217);
@@ -100,11 +95,6 @@ button {
     text-align: center;
     color: rgb(87, 80, 80);
 }
-tr:hover td {
-    color: #2caddc;
-    cursor: pointer;
-    background-color: #f6f9fc;
-}
 
 .stt {
     width: 100px;
@@ -122,11 +112,8 @@ tr:hover td {
     width: 100px;
 }
 /* delete */
-table button {
-    color: red;
-    background-color: #e1e1e1;
-}
-table button:hover {
+
+.table button:hover {
     background-color: #bab9b9;
 }
 .form-add-sv {
@@ -142,9 +129,11 @@ table button:hover {
 }
 .sua {
     color: black;
+    cursor: pointer;
     background-color: transparent;
     font-size: 15px;
     font-weight: 600;
+
     &:hover {
         font-size: 15px;
 

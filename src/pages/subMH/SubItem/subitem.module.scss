@@ -25,64 +25,31 @@
     display: flex;
     align-items: center;
 }
-.content__row {
-    display: flex;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    height: 25px;
-    & + .content__row {
-        border-top: 1px solid #333;
-    }
-}
-.content__row_item {
-    height: 60px;
-    padding: 5px 0px;
-}
-.content__row .STT {
-    flex: 1;
-    text-align: center;
-}
-.content__row .desc {
-    flex: 4;
-}
-.content__row .time {
-    flex: 2;
-    display: flex;
-    justify-content: space-between;
-}
-.content__row .regis {
-    flex: 2;
-    text-align: center;
-    position: relative;
-}
-.content__row .regis a {
-    border: 1px solid rgb(169, 117, 117);
-    background-color: rgb(168, 231, 200);
-    cursor: pointer;
-    padding: 2px 6px;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-.content__row .regis a:hover {
-    color: rgb(117, 117, 233);
-    opacity: 0.8;
-}
-.content-item--first,
-.content-item--second {
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    min-width: 90px;
-}
+
 .overtime {
     cursor: default !important;
     color: red;
 }
 .delete {
-    margin-right: 30px;
-    cursor: pointer;
+    cursor: pointer !important;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black !important;
+    &:hover {
+        color: red !important;
+    }
 }
+
+.content-item :hover {
+    color: red !important;
+}
+
 @media only screen and (max-width: 723px) {
     .content-item--second {
         line-height: 25px;
@@ -127,8 +94,9 @@
         right: 5px;
         font-size: 11px;
     }
-    .delete {
-        margin-right: 10px;
+
+    .title {
+        max-width: 90px;
     }
 }
 /* table */
