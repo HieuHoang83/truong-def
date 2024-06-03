@@ -209,7 +209,7 @@ function Pravate() {
             )}
 
             {show && type === 'admin' && (
-                <div className={cx('admin-wrapper')}>
+                <div className={cx('wrapper')}>
                     <div className={cx('breadcrum')}>
                         {DS.map((item, index) => {
                             return (

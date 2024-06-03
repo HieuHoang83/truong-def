@@ -55,7 +55,7 @@ function ItemStudent({ MSSV, Name, Diem, xoa, Chinhsua, index, sua = true, type,
                 )}
             </tr>
             {show && (
-                <tr className={cx('tr')} style={{ background: 'rgb(204 204 204 / 39%)' }}>
+                <tr className={cx('change')}>
                     <th className={cx('th', 'notcopy', 'suadiem')}>{MSSV}</th>
                     <th className={cx('th', 'notcopy')}>{Name}</th>
                     <th className={cx('th', 'notcopy', 'boxsua')}>
@@ -79,7 +79,7 @@ function ItemStudent({ MSSV, Name, Diem, xoa, Chinhsua, index, sua = true, type,
                             :<input type="text" placeholder="Nhập điểm mới" ref={Thiref} className={cx('iteminput')} />
                         </div>
                     </th>
-                    <th className={cx('th', 'notcopy', 'chinhsua')}>
+                    <th colSpan="2" className={cx('th', 'notcopy', 'chinhsua')}>
                         <div
                             className={classes}
                             onClick={() => {

@@ -3,6 +3,14 @@
     border: 2px solid #ccc;
     border-collapse: collapse;
 }
+.semester__body tbody {
+    & tr:nth-child(even) {
+        & td,
+        & th {
+            background-color: #cccccc87;
+        }
+    }
+}
 .semester__body thead {
     & th {
         background-image: linear-gradient(to bottom right, rgb(85, 85, 223), rgba(0, 248, 255, 0.431372549));
@@ -16,9 +24,8 @@
     padding: 5px 20px;
     text-align: center;
 }
-.header {
-    height: 30px;
 
+.header {
     &.active {
         color: black;
     }

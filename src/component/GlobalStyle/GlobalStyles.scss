@@ -40,6 +40,7 @@ body {
     font-size: 1.6rem;
     line-height: 1.5rem;
     text-rendering: optimizeSpeed;
+    overflow-x: hidden !important;
 }
 @keyframes fadein {
     from {

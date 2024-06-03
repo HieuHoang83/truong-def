@@ -6,6 +6,10 @@
     margin-top: 100px;
     margin-left: 52%;
     transform: translateX(-50%);
+
+    & tr:nth-child(even) {
+        background-color: #ccc;
+    }
 }
 @media only screen and (max-width: 723px) {
     .score_table {
