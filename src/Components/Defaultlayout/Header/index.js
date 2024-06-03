@@ -405,7 +405,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                             }}
                         />
 
-                        <div className={cx('table-user', 'display__none')}>
+                        <nav className={cx('table-user', 'display__none')}>
                             {type !== 'teacher' && (
                                 <Link
                                     to="/course/addcourse"
@@ -447,7 +447,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                             >
                                 Đăng xuất
                             </Link>
-                        </div>
+                        </nav>
                     </li>
                 </ul>
             </div>
