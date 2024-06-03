@@ -20,13 +20,7 @@
     color: white;
     font-size: 30px;
 }
-button {
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    padding: 10px;
-}
+
 .add_student {
     padding: 10px 20px;
     color: white;
@@ -80,25 +74,7 @@ button {
     overflow: auto;
     height: 500px;
 }
-table {
-    width: 1000px;
-    table-layout: auto;
-    position: sticky;
-    top: 20px;
-    border-collapse: collapse;
-}
-table th {
-    background-color: #f6f8f9;
-    color: #77b1f7;
-    font-size: 15px;
-}
-th,
-td {
-    border: 1px solid #a5a5a5;
-    padding: 10px 20px;
-    text-align: center;
-    color: rgb(87, 80, 80);
-}
+
 tr:hover td {
     color: #2caddc;
     cursor: pointer;

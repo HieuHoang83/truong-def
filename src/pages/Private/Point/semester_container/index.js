@@ -11,35 +11,39 @@ function Semester__body({ list }) {
     const [courses] = useState(list);
 
     return (
-        <div key="semester__body__body" className={cx('semester__body')}>
-            <ul key="semester__body__list" className={cx('header', 'active')}>
-                <li key="Ma_MH" className={cx('Ma_MH', 'MH_item')}>
-                    <p> MÃ MH</p>
-                </li>
-                <li key="Ten_MH" className={cx('Ten_MH', 'MH_item')}>
-                    <p>TÊN MÔN HỌC</p>
-                </li>
-                <li key="Nhom_MH" className={cx('Nhom_MH', 'MH_item')}>
-                    <p>NHÓM-TỔ</p>
-                </li>
-                <li key="TinChi_MH" className={cx('TinChi_MH', 'MH_item')}>
-                    <p>SỐ TC</p>
-                </li>
-                <li key="Diem_MH" className={cx('Diem_MH', 'MH_item')}>
-                    <p>ĐIỂM THÀNH PHẦN</p>
-                </li>
-                <li key="DiemCK_MH" className={cx('DiemCK_MH', 'MH_item')}>
-                    <p>ĐIỂM THI</p>
-                </li>
-                <li key="DiemTk_MH" className={cx('DiemTk_MH', 'MH_item')}>
-                    <p>TỔNG KẾT</p>
-                </li>
-            </ul>
-            {courses.map((item, index) => {
-                //eslint-disable-next-line
-                return <Point_course key={`${item.Ma_MH}-${index}`} {...item} />;
-            })}
-        </div>
+        <table key="semester__body__body" className={cx('semester__body')}>
+            <thead key="semester__body__list" className={cx('header', 'active')}>
+                <tr key="0">
+                    <th key="Ma_MH">
+                        <p> MÃ MH</p>
+                    </th>
+                    <th key="Ten_MH">
+                        <p>TÊN MÔN HỌC</p>
+                    </th>
+                    <th key="Nhom_MH">
+                        <p>NHÓM-TỔ</p>
+                    </th>
+                    <th key="TinChi_MH">
+                        <p>SỐ TC</p>
+                    </th>
+                    <th key="Diem_MH">
+                        <p>ĐIỂM THÀNH PHẦN</p>
+                    </th>
+                    <th key="DiemCK_MH">
+                        <p>ĐIỂM THI</p>
+                    </th>
+                    <th key="DiemTk_MH">
+                        <p>TỔNG KẾT</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {courses.map((item, index) => {
+                    //eslint-disable-next-line
+                    return <Point_course key={`${item.Ma_MH}-${index}`} {...item} />;
+                })}
+            </tbody>
+        </table>
     );
 }
 
