@@ -180,14 +180,6 @@ const SubMH = () => {
                     </tbody>
                 </table>
             </div>
-            <div className={cx('test')}>
-                <FormBtnToggle
-                    content="Âm lượng"
-                    setting1="OFF"
-                    setting2="On"
-                    className={cx('testlabel')}
-                ></FormBtnToggle>
-            </div>
         </div>
     );
 };
