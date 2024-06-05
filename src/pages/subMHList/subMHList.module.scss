@@ -392,6 +392,9 @@
         height: 25px;
         font-size: 1.6rem;
         padding: 5px 0px 5px 5px;
+        &:not(:placeholder-shown) ~ .search__clear {
+            display: block;
+        }
     }
 
     .search__clear {
@@ -407,6 +410,8 @@
         /* margin-right: 10px; */
         /* flex-grow: 1; */
         font-size: 20px;
+        display: none;
+        margin-left: auto;
         &:hover {
             opacity: 0.5;
         }
@@ -424,7 +429,6 @@
         position: relative;
         color: rgba(22, 24, 35, 0.9);
         margin-right: 5px;
-        cursor: pointer;
         &::after {
             content: '';
             display: block;
@@ -436,6 +440,7 @@
             transform: translateY(-50%);
         }
     }
+
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
     }

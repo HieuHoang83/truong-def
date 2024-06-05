@@ -76,6 +76,9 @@
     .search__input:not(:placeholder-shown) ~ .search__icon {
         color: rgba(22, 24, 35, 0.9);
     }
+    .search__input:not(:placeholder-shown) ~ .search__clear {
+        display: block;
+    }
     .search__clear {
         background-color: transparent;
         border: none;
@@ -85,37 +88,13 @@
         color: #9f9f9f;
         margin-right: 10px;
         cursor: pointer;
+        display: none;
+        margin-left: auto;
         &:hover {
             opacity: 0.5;
         }
     }
-    .search__icon {
-        background-color: transparent;
-        border: none;
-        outline: none;
-        font-size: 1.5rem;
-        border-bottom-right-radius: 25px;
-        border-top-right-radius: 25px;
-        flex: 1 1;
-        height: 35px;
-        position: relative;
-        color: #878787;
-        cursor: pointer;
 
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            border-left: 2px solid #979393;
-            height: 20px;
-            top: 50%;
-            left: -2px;
-            transform: translateY(-50%);
-        }
-        &:hover {
-            background-color: rgb(133 126 126 / 12%);
-        }
-    }
     &:focus-within {
         border-color: rgba(22, 24, 35, 0.2);
     }

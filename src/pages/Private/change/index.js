@@ -175,84 +175,108 @@ function Change(onsave) {
         <main className={cx('info-item', 'change-info')}>
             <h1 className={cx('change-info__decoration')}> Cập nhật thông tin liên lạc</h1>
             <div className={cx('change-info__body')}>
-                <section className={cx('change-info__me')}>
-                    <h2 className={cx('change-info__me-header')}>Thay đổi thông tin cá nhân</h2>
+                <form className={cx('change-info__me')}>
+                    <label className={cx('change-info__me-header')}>Thay đổi thông tin cá nhân</label>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Số điện thoại</h3>
+                        <label className={cx('change-info__label')} htmlFor="mytel">
+                            Số điện thoại
+                        </label>
                         <input
                             ref={phoneref}
                             type="tel"
                             className={cx('change-info__input')}
                             placeholder="Số điện thoại liên lạc"
+                            id="mytel"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Nơi ở hiện tại của {nameCard} </h3>
+                        <label className={cx('change-info__label')} htmlFor="myaddress">
+                            Nơi ở hiện tại của {nameCard}{' '}
+                        </label>
                         <input
                             ref={addressref}
                             type="text"
                             className={cx('change-info__input')}
                             placeholder="Địa chỉ hiện tại"
+                            id="myaddress"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Địa chỉ email cá nhân</h3>
+                        <label className={cx('change-info__label')} htmlFor="myemail">
+                            Địa chỉ email cá nhân
+                        </label>
                         <input
                             ref={emailref}
                             type="email"
                             className={cx('change-info__input')}
                             placeholder="Email khác @def.edu.vn"
+                            id="myemail"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Trang mạng xã hội cá nhân </h3>
+                        <label className={cx('change-info__label')} htmlFor="mysocial">
+                            Trang mạng xã hội cá nhân{' '}
+                        </label>
                         <input
                             type="text"
                             className={cx('change-info__input')}
                             ref={socialNetworkref}
                             placeholder="Link facebook, instagram..."
+                            id="mysocial"
                         />
                     </div>
-                </section>
-                <section className={cx('change-info__family')}>
-                    <h2 className={cx('change-info__me-header')}>Thay đổi thông tin người thân</h2>
+                </form>
+                <form className={cx('change-info__family')}>
+                    <label className={cx('change-info__me-header')}>Thay đổi thông tin người thân</label>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Tên người thân(1)</h3>
+                        <label className={cx('change-info__label')} htmlFor="nameParent1">
+                            Tên người thân(1)
+                        </label>
                         <input
                             type="text"
                             className={cx('change-info__input')}
                             ref={nameParent1ref}
                             placeholder="Họ và tên người thân"
+                            id="nameParent1"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Số điện thoại người thân</h3>
+                        <label className={cx('change-info__label')} htmlFor="tellParent1">
+                            Số điện thoại người thân
+                        </label>
                         <input
                             type="text"
                             className={cx('change-info__input')}
                             placeholder="Số điện thoại liên lạc"
                             ref={phoneParent1ref}
+                            id="tellParent1"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Tên người thân(2)</h3>
+                        <label className={cx('change-info__label')} htmlFor="nameParent2">
+                            Tên người thân(2)
+                        </label>
                         <input
                             ref={nameParent2ref}
                             type="text"
                             className={cx('change-info__input')}
                             placeholder="Họ và tên người thân khác khi không liên hệ được người trên "
+                            id="nameParent2"
                         />
                     </div>
                     <div className={cx('change-info__me-block')}>
-                        <h3 className={cx('change-info__label')}>Số điện thoại người thân</h3>
+                        <label className={cx('change-info__label')} htmlFor="tellParent2">
+                            Số điện thoại người thân
+                        </label>
                         <input
                             type="text"
                             className={cx('change-info__input')}
                             placeholder="Số điện thoại liên lạc"
                             ref={phoneParent2ref}
+                            id="tellParent2"
                         />
                     </div>
-                </section>
+                </form>
                 <button className={cx('change-info__btn')} onClick={(e) => handleSave(e)}>
                     Lưu thông tin
                 </button>

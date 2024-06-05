@@ -4,6 +4,7 @@ import styles from './subMH.module.scss';
 import SubItem from './SubItem/SubItem';
 import { get, child, set, ref, database, remove } from '~/pages/Login';
 import { UseStore } from '~/Store';
+import FormBtnToggle from '~/Components/Defaultlayout/formBtnToggle';
 const cx = classNames.bind(styles);
 
 const SubMH = () => {
@@ -178,6 +179,14 @@ const SubMH = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
+            <div className={cx('test')}>
+                <FormBtnToggle
+                    content="Âm lượng"
+                    setting1="OFF"
+                    setting2="On"
+                    className={cx('testlabel')}
+                ></FormBtnToggle>
             </div>
         </div>
     );

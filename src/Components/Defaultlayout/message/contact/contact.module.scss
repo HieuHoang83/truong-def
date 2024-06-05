@@ -71,7 +71,7 @@
         height: 65px;
         border-radius: 5px;
         outline: none;
-
+        resize: none;
         &:focus {
             border: 1px solid rgb(0, 191, 255);
         }

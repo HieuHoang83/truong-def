@@ -173,9 +173,6 @@ function Course() {
                                 >
                                     <i className="fa-solid fa-circle-xmark"></i>
                                 </button>
-                                <button className={cx('search__icon')}>
-                                    <i className="fa-solid fa-magnifying-glass "></i>
-                                </button>
                             </div>
                             {type != 'admin' && (
                                 <div className={cx('sort')}>
