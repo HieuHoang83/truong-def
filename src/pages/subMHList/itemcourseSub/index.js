@@ -34,7 +34,9 @@ function ItemListsub({
             <td className={cx('schedule')}>{schedule.string}</td>
             <td className={cx('week')}>{week}</td>
             <td className={cx('delete')} onClick={onclick}>
-                <i className={cx('fa-solid', 'fa-trash')}></i>
+                <button>
+                    <i className={cx('fa-solid', 'fa-trash')}></i>
+                </button>
             </td>
         </tr>
     );

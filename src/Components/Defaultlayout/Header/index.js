@@ -217,27 +217,24 @@ function Header({ Active = true, Private = false, Course = false }) {
                                         </span>
                                     )}
                                 >
-                                    <span>
-                                        <i
-                                            className={cx('iconbell', 'fa-regular', 'fa-bell')}
-                                            onClick={() => {
-                                                if (isnotify === true) {
-                                                    let newlist = [...Notify_list];
-                                                    if (
-                                                        newlist.every((item) => {
-                                                            return !item.active;
-                                                        })
-                                                    ) {
-                                                        SetIsnotify(false);
-                                                    } else {
-                                                        SetIsnotify(false);
+                                    <button
+                                        onClick={() => {
+                                            if (isnotify === true) {
+                                                let newlist = [...Notify_list];
+                                                if (
+                                                    newlist.every((item) => {
+                                                        return !item.active;
+                                                    })
+                                                ) {
+                                                    SetIsnotify(false);
+                                                } else {
+                                                    SetIsnotify(false);
 
-                                                        newlist.forEach((item) => {
-                                                            item.active = false;
-                                                        });
-                                                        get(
-                                                            child(dbRef, `accounts/${standardizeEmail}/notification`),
-                                                        ).then((snapshot) => {
+                                                    newlist.forEach((item) => {
+                                                        item.active = false;
+                                                    });
+                                                    get(child(dbRef, `accounts/${standardizeEmail}/notification`)).then(
+                                                        (snapshot) => {
                                                             if (snapshot.exists()) {
                                                                 for (let i = snapshot.size - 1; i >= 0; i--) {
                                                                     set(
@@ -250,19 +247,21 @@ function Header({ Active = true, Private = false, Course = false }) {
                                                                 }
                                                                 setNotify_list(newlist);
                                                             }
-                                                        });
-                                                    }
-                                                } else {
-                                                    SetIsnotify(!isnotify);
+                                                        },
+                                                    );
                                                 }
+                                            } else {
+                                                SetIsnotify(!isnotify);
+                                            }
 
-                                                SetIsmess(false);
-                                                document
-                                                    .querySelector(`.${cx('table-user')}`)
-                                                    .classList.add(`${cx('display__none')}`);
-                                            }}
-                                        ></i>
-                                    </span>
+                                            SetIsmess(false);
+                                            document
+                                                .querySelector(`.${cx('table-user')}`)
+                                                .classList.add(`${cx('display__none')}`);
+                                        }}
+                                    >
+                                        <i className={cx('iconbell', 'fa-regular', 'fa-bell')}></i>
+                                    </button>
                                 </Tippy>
                             </span>
 
@@ -367,8 +366,7 @@ function Header({ Active = true, Private = false, Course = false }) {
 
                     {type !== 'admin' && (
                         <li className={cx('mess')}>
-                            <i
-                                className="fa-regular fa-comment"
+                            <button
                                 onClick={() => {
                                     SetIsmess(!ismess);
                                     SetIsnotify(false);
@@ -376,26 +374,25 @@ function Header({ Active = true, Private = false, Course = false }) {
                                         .querySelector(`.${cx('table-user')}`)
                                         .classList.add(`${cx('display__none')}`);
                                 }}
-                            ></i>
+                                className={cx('button-mess')}
+                            >
+                                <i className="fa-regular fa-comment"></i>
+                            </button>
+
                             {ismess && (
                                 <div className={cx('box-mess')}>
-                                    <ProperWrapper>
-                                        <Message
-                                            onClick={() => {
-                                                SetIsmess(false);
-                                            }}
-                                        />
-                                    </ProperWrapper>
+                                    <Message
+                                        onClick={() => {
+                                            SetIsmess(false);
+                                        }}
+                                    />
                                 </div>
                             )}
                         </li>
                     )}
 
                     <li className={cx('user')}>
-                        <img
-                            src="https://bloganchoi.com/wp-content/uploads/2022/02/avatar-trang-y-nghia.jpeg"
-                            alt=""
-                            className={cx('avatar')}
+                        <button
                             onClick={() => {
                                 document
                                     .querySelector(`.${cx('table-user')}`)
@@ -403,7 +400,13 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 SetIsmess(false);
                                 SetIsnotify(false);
                             }}
-                        />
+                        >
+                            <img
+                                src="https://bloganchoi.com/wp-content/uploads/2022/02/avatar-trang-y-nghia.jpeg"
+                                alt=""
+                                className={cx('avatar')}
+                            />
+                        </button>
 
                         <nav className={cx('table-user', 'display__none')}>
                             {type !== 'teacher' && (

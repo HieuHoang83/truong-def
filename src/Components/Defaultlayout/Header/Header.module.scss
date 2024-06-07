@@ -151,7 +151,7 @@
         z-index: 10;
         top: 48px;
         right: 0px;
-
+        padding-top: 10px;
         border: solid 2px rgba(51, 51, 51, 0.1607843137);
     }
 
@@ -161,6 +161,9 @@
         width: 30px;
         height: 30px;
         cursor: pointer;
+    }
+    .button-mess {
+        background-color: transparent;
     }
 }
 
@@ -275,20 +278,23 @@
 
     .active {
         .box-mess {
-            width: 350px;
             background-color: white;
-            margin-top: 11px;
             border-top: transparent;
             border-radius: 2px;
-            margin-left: 6px;
+            /* margin-left: 6px; */
             color: #ccc;
-            animation: mess-Out 0.6s ease-in;
+            animation: Header_mess-Out__RAoTc 0.6s ease-in;
             position: fixed;
             z-index: 10;
-            top: 30px;
+            top: 39px;
             right: 0px;
-
+            left: 0px;
             border: solid 2px rgba(51, 51, 51, 0.1607843137);
+            margin-left: 0px;
+            width: auto;
+            margin-top: 0px;
+            height: auto;
+            overflow: hidden;
         }
         .box-notify {
             right: -93px;

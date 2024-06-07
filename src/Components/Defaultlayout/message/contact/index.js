@@ -112,9 +112,12 @@ function Contact({ name, index, email, onclickprev }) {
     }, []);
     useEffect(() => {
         if (prevstate !== contact.length) {
-            let body = document.querySelector(`.${cx('body')}`);
+            let body = document.querySelector(`.${cx('wrapper')}`);
+
             if (body) {
-                if (body.scrollTop > body.scrollHeight - 800) {
+                if (body.scrollTop == 0) {
+                    body.scrollTop = body.scrollHeight;
+                } else if (body.scrollTop > body.scrollHeight - 1200) {
                     body.scrollTop = body.scrollHeight;
                 }
             }
@@ -136,7 +139,6 @@ function Contact({ name, index, email, onclickprev }) {
                     />
                     <div className={cx('name')}>{name}</div>
                 </div>
-                
             </div>
             <div className={cx('body')}>
                 {!load &&
@@ -174,9 +176,9 @@ function Contact({ name, index, email, onclickprev }) {
                     spellCheck={false}
                 ></textarea>
 
-                <div className={cx('footer-icon')} onClick={handleSend}>
+                <button className={cx('footer-icon')} onClick={handleSend}>
                     <i className={cx('send', 'fa-solid', 'fa-paper-plane')}></i>
-                </div>
+                </button>
             </div>
         </div>
     );

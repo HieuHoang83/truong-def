@@ -1,7 +1,9 @@
 .wrapper {
-    height: 640px;
+    height: 100vh;
     background-color: #eff1f3;
     cursor: default;
+    overflow: auto;
+    padding-bottom: 140px;
 }
 .header {
     background-color: white;
@@ -11,7 +13,9 @@
     display: flex;
     align-items: center;
     border: solid 1px #ccc;
-
+    position: fixed;
+    top: 59px;
+    z-index: 10;
     .contact {
         display: flex;
         align-items: center;
@@ -56,15 +60,18 @@
     }
 }
 .body {
-    height: 500px;
-    padding-bottom: 20px;
-    overflow-y: scroll;
+    margin-bottom: 20px;
+    padding-top: 40px;
 }
 .footer {
     background-color: white;
     height: 80px;
     display: flex;
     padding: 10px 15px;
+    position: fixed;
+    width: 350px;
+    bottom: 0px;
+    border-bottom: 2px solid #ccc;
     .footer-input {
         padding: 10px;
         width: 87%;
@@ -116,7 +123,19 @@
     }
 }
 @media only screen and (max-width: 723px) {
+    .header {
+        top: 39px;
+    }
     .body {
-        height: 390px;
+        overscroll-behavior: none;
+        margin-bottom: 60px;
+    }
+    .wrapper {
+        padding-bottom: 140px;
+    }
+    .footer {
+        width: 100%;
+        background-color: #eff1f3;
+        border-bottom: 2px solid #ccc;
     }
 }

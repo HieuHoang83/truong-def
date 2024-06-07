@@ -90,10 +90,10 @@ function Message({ onClick }) {
     }, []);
     return (
         <div className={cx('message')}>
-            <div className={cx('clear')} onClick={onClick}>
+            <button className={cx('clear')} onClick={onClick}>
                 <i className={cx('fa-solid', 'fa-xmark')}></i>
-            </div>
-            <p className={cx('header')}>Tin nhắn cá nhân</p>
+            </button>
+            {!contact && <p className={cx('header')}>Tin nhắn cá nhân</p>}
             {!contact && (
                 <div className={cx('box_search')}>
                     <div className={cx('search')}>

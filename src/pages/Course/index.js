@@ -176,14 +176,14 @@ function Course() {
                             </div>
                             {type != 'admin' && (
                                 <div className={cx('sort')}>
-                                    <div
+                                    <button
                                         className={cx('sort_content')}
                                         onClick={() => {
                                             setShow(!show);
                                         }}
                                     >
                                         {sort[0]} <i className={cx('fa-solid', 'fa-chevron-down', 'icon')}></i>
-                                    </div>
+                                    </button>
 
                                     {show && type !== 'admin' && (
                                         <div className={cx('sort__list_selection')}>

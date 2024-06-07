@@ -37,9 +37,9 @@ function DefaultLayout({ children }) {
 
     return (
         <>
-            <Header></Header>
+            <Header onmess={() => {}}></Header>
             {show && (
-                <div className={cx('wrapper')}>
+                <div className={`${cx('wrapper')}`}>
                     <a className={cx('up', 'display__none')} href="#">
                         <i className={cx('fa-solid', 'fa-chevron-up')}></i>
                     </a>
