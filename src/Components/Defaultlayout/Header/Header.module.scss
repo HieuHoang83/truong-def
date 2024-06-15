@@ -132,13 +132,18 @@
         border: solid 2px #33333329;
         border-top: transparent;
         border-radius: 2px;
-        right: -12px;
+        right: 0px;
+        top: 50px;
         color: #ccc;
-        animation: fade-growth-in 0.3s ease-in;
-        transform-origin: 97% -2%;
+        visibility: hidden;
+        scale: 0;
+        opacity: 0;
+        transform-origin: 97% -5%;
+        transition: visibility 300ms ease-in, opacity 300ms ease-in, scale 300ms ease-in;
     }
 
     .box-mess {
+        visibility: hidden;
         width: 350px;
         background-color: white;
         margin-top: 11px;
@@ -146,13 +151,15 @@
         border-radius: 2px;
         margin-left: 6px;
         color: #ccc;
-        animation: mess-Out 0.6s ease-in;
         position: fixed;
         z-index: 10;
         top: 48px;
-        right: 0px;
+        right: -100%;
         padding-top: 10px;
         border: solid 2px rgba(51, 51, 51, 0.1607843137);
+
+        opacity: 0;
+        transition: visibility 800ms ease, opacity 800ms ease, right 800ms linear;
     }
 
     .avatar {
@@ -164,6 +171,7 @@
     }
     .button-mess {
         background-color: transparent;
+        cursor: pointer;
     }
 }
 
@@ -219,18 +227,6 @@
 
     100% {
         transform: translateX(0%);
-    }
-}
-
-@keyframes fade-growth-in {
-    from {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
     }
 }
 
@@ -295,10 +291,11 @@
             margin-top: 0px;
             height: auto;
             overflow: hidden;
+            right: 0px !important;
         }
         .box-notify {
-            right: -93px;
-            top: -5px;
+            right: -10px;
+            top: 40px;
         }
         .notify,
         .mess {
@@ -315,5 +312,39 @@
 }
 
 /* table */
-@media only screen and (min-width: 740px) and (max-width: 1024px) {
+@media only screen and (max-width: 370px) {
+    .active {
+        .box-mess {
+            background-color: white;
+            border-top: transparent;
+            border-radius: 2px;
+            /* margin-left: 6px; */
+            color: #ccc;
+            animation: Header_mess-Out__RAoTc 0.6s ease-in;
+            position: fixed;
+            z-index: 10;
+            top: 39px;
+            right: 0px;
+            left: 0px;
+            border: solid 2px rgba(51, 51, 51, 0.1607843137);
+            margin-left: 0px;
+            width: auto;
+            margin-top: 0px;
+            height: auto;
+            overflow: hidden;
+            right: 0px !important;
+        }
+        .box-notify {
+            right: -25px;
+            top: 40px;
+        }
+        .notify,
+        .mess {
+            font-size: 1.5rem;
+        }
+        .avatar {
+            width: 25px;
+            height: 25px;
+        }
+    }
 }

@@ -198,72 +198,64 @@ function Header({ Active = true, Private = false, Course = false }) {
                 <ul className={cx('active')}>
                     {type !== 'admin' && (
                         <li className={cx('notify')}>
-                            <span>
-                                <Tippy
-                                    interactive="true"
-                                    visible={isnotify}
-                                    // delay={[100, 100]}
-                                    render={(attrs) => (
-                                        <span>
-                                            <div className={cx('box-notify')} tabIndex="-1" {...attrs}>
-                                                <ProperWrapper>
-                                                    <Notify
-                                                        list={Notify_list}
-                                                        courseID={courseID}
-                                                        classCourse={classCourse}
-                                                    />
-                                                </ProperWrapper>
-                                            </div>
-                                        </span>
-                                    )}
-                                >
-                                    <button
-                                        onClick={() => {
-                                            if (isnotify === true) {
-                                                let newlist = [...Notify_list];
-                                                if (
-                                                    newlist.every((item) => {
-                                                        return !item.active;
-                                                    })
-                                                ) {
-                                                    SetIsnotify(false);
-                                                } else {
-                                                    SetIsnotify(false);
+                            <button
+                                onClick={() => {
+                                    const notify = document.querySelector(`.${cx('box-notify')}`);
+                                    const boxmess = document.querySelector(`.${cx('box-mess')}`);
+                                    console.log(notify.style.visibility);
+                                    if (notify.style.visibility === 'visible') {
+                                        notify.style.visibility = 'hidden';
+                                        notify.style.scale = 0;
+                                        notify.style.opacity = 0;
 
-                                                    newlist.forEach((item) => {
-                                                        item.active = false;
-                                                    });
-                                                    get(child(dbRef, `accounts/${standardizeEmail}/notification`)).then(
-                                                        (snapshot) => {
-                                                            if (snapshot.exists()) {
-                                                                for (let i = snapshot.size - 1; i >= 0; i--) {
-                                                                    set(
-                                                                        child(
-                                                                            dbRef,
-                                                                            `accounts/${standardizeEmail}/notification/${i}/active`,
-                                                                        ),
-                                                                        false,
-                                                                    );
-                                                                }
-                                                                setNotify_list(newlist);
-                                                            }
-                                                        },
-                                                    );
-                                                }
-                                            } else {
-                                                SetIsnotify(!isnotify);
-                                            }
+                                        let newlist = [...Notify_list];
+                                        if (
+                                            newlist.every((item) => {
+                                                return item.active;
+                                            })
+                                        ) {
+                                            newlist.forEach((item) => {
+                                                item.active = false;
+                                            });
+                                            get(child(dbRef, `accounts/${standardizeEmail}/notification`)).then(
+                                                (snapshot) => {
+                                                    if (snapshot.exists()) {
+                                                        for (let i = snapshot.size - 1; i >= 0; i--) {
+                                                            set(
+                                                                child(
+                                                                    dbRef,
+                                                                    `accounts/${standardizeEmail}/notification/${i}/active`,
+                                                                ),
+                                                                false,
+                                                            );
+                                                        }
+                                                        setNotify_list(newlist);
+                                                    }
+                                                },
+                                            );
+                                        }
+                                    } else {
+                                        notify.style.visibility = 'visible';
+                                        boxmess.style.visibility = 'hidden';
+                                        boxmess.style.right = '-100%';
+                                        boxmess.style.opacity = 1;
 
-                                            SetIsmess(false);
-                                            document
-                                                .querySelector(`.${cx('table-user')}`)
-                                                .classList.add(`${cx('display__none')}`);
-                                        }}
-                                    >
-                                        <i className={cx('iconbell', 'fa-regular', 'fa-bell')}></i>
-                                    </button>
-                                </Tippy>
-                            </span>
+                                        notify.style.scale = 1;
+                                        notify.style.opacity = 1;
+                                    }
+
+                                    document
+                                        .querySelector(`.${cx('table-user')}`)
+                                        .classList.add(`${cx('display__none')}`);
+                                }}
+                            >
+                                <i className={cx('iconbell', 'fa-regular', 'fa-bell')}></i>
+                            </button>
+                            <div className={cx('box-notify')}>
+                                <ProperWrapper>
+                                    <Notify list={Notify_list} courseID={courseID} classCourse={classCourse} />
+                                </ProperWrapper>
+                            </div>
 
                             {numbernotify > 0 && numbernotify <= 10 && (
                                 <div
@@ -368,8 +360,22 @@ function Header({ Active = true, Private = false, Course = false }) {
                         <li className={cx('mess')}>
                             <button
                                 onClick={() => {
-                                    SetIsmess(!ismess);
-                                    SetIsnotify(false);
+                                    const notify = document.querySelector(`.${cx('box-notify')}`);
+                                    const boxmess = document.querySelector(`.${cx('box-mess')}`);
+                                    if (boxmess.style.visibility === 'visible') {
+                                        boxmess.style.visibility = 'hidden';
+                                        boxmess.style.opacity = 0;
+                                        boxmess.style.right = '-100%';
+                                    } else {
+                                        boxmess.style.visibility = 'visible';
+                                        boxmess.style.right = '0%';
+
+                                        boxmess.style.opacity = 1;
+                                        notify.style.visibility = 'hidden';
+                                        notify.style.scale = 0;
+                                        notify.style.opacity = 0;
+                                    }
+
                                     document
                                         .querySelector(`.${cx('table-user')}`)
                                         .classList.add(`${cx('display__none')}`);
@@ -379,15 +385,18 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 <i className="fa-regular fa-comment"></i>
                             </button>
 
-                            {ismess && (
-                                <div className={cx('box-mess')}>
-                                    <Message
-                                        onClick={() => {
-                                            SetIsmess(false);
-                                        }}
-                                    />
-                                </div>
-                            )}
+                            <div className={cx('box-mess')}>
+                                <Message
+                                    onClick={() => {
+                                        const boxmess = document.querySelector(`.${cx('box-mess')}`);
+                                        if (boxmess && boxmess.style.visibility == 'visible') {
+                                            boxmess.style.visibility = 'hidden';
+                                            boxmess.style.right = '-100%';
+                                            boxmess.style.opacity = 1;
+                                        }
+                                    }}
+                                />
+                            </div>
                         </li>
                     )}
 
@@ -397,8 +406,19 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 document
                                     .querySelector(`.${cx('table-user')}`)
                                     .classList.toggle(`${cx('display__none')}`);
-                                SetIsmess(false);
-                                SetIsnotify(false);
+                                const notify = document.querySelector(`.${cx('box-notify')}`);
+
+                                if (notify && notify.style.visibility == 'visible') {
+                                    notify.style.visibility = 'hidden';
+                                    notify.style.scale = 0;
+                                    notify.style.opacity = 0;
+                                }
+                                const boxmess = document.querySelector(`.${cx('box-mess')}`);
+                                if (boxmess && boxmess.style.visibility == 'visible') {
+                                    boxmess.style.visibility = 'hidden';
+                                    boxmess.style.right = '-100%';
+                                    boxmess.style.opacity = 1;
+                                }
                             }}
                         >
                             <img
