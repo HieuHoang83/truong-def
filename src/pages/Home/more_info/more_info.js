@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './more_info.module.scss';
+import styles1 from './more_info.module.scss';
 
 const CardComponent = ({ title, content, imageUrl, text_more }) => {
     const [showDetail, setShowDetail] = useState(false);
@@ -10,30 +10,23 @@ const CardComponent = ({ title, content, imageUrl, text_more }) => {
     };
 
     return (
-        <div className={styles.cardContainer}>
-            <div
-                className={styles.card}
-                onMouseEnter={() => setHideTitleOutside(true)}
-                onMouseLeave={() => setHideTitleOutside(false)}
-                style={{ backgroundImage: `url(${imageUrl})`, backgroundPosition: 'center' }}
-            >
-                <div className={styles.cardContent}>
-                    <p className={styles.cardTitle}>{title}</p>
-                    <p className={styles.cardDescription}>{content}</p>
-                    <div className={styles.cardButton}>
-                        <button className={styles.button} onClick={toggleDetail}>
+        <div className={styles1.cardContainer}>
+            <div className={styles1.card} style={{ backgroundImage: `url(${imageUrl})`, backgroundPosition: 'center' }}>
+                <div className={styles1.cardContent}>
+                    <p className={styles1.cardTitle}>{title}</p>
+                    <p className={styles1.cardDescription}>{content}</p>
+                    <div className={styles1.cardButton}>
+                        <button className={styles1.button} onClick={toggleDetail}>
                             More Info
                         </button>
                     </div>
-                    {showDetail && <div className={styles.detailContent}>{text_more}</div>}
+                    {showDetail && <div className={styles1.detailContent}>{text_more}</div>}
                 </div>
             </div>
-            <img src={imageUrl} alt="Thumbnail" className={styles.cardImage} />
-            {!hideTitleOutside && (
-                <div className={styles.cardImageDiv}>
-                    <p className={styles.cardTitleOutSide}>{title}</p>
-                </div>
-            )}
+            <img src={imageUrl} alt="Thumbnail" className={styles1.cardImage} />
+            <div className={styles1.cardImageDiv}>
+                <p className={styles1.cardTitleOutSide}>{title}</p>
+            </div>
         </div>
     );
 };

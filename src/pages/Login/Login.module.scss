@@ -179,7 +179,7 @@ input:-webkit-autofill:active {
 @media only screen and (min-width: 740px) and (max-width: 1024px) {
     .login {
         left: 50%;
-        transform: translateX(-50%);
-        top: 30%;
+        transform: translate(-50%, -50%);
+        top: 50%;
     }
 }

@@ -4,7 +4,7 @@ import MessItem from './index';
 import { useState, useEffect } from 'react';
 import Contact from './contact';
 import { child, ref, database, onValue } from '~/pages/Login';
-
+import stylescontainer from '../Defaultlayout.module.scss';
 const cx = classNames.bind(styles);
 function removeVietnameseTones(str) {
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, 'a');
@@ -44,6 +44,7 @@ function Message({ onClick }) {
     const [contact_email, setContact_email] = useState('');
     const dbRef = ref(database);
     let standardizeEmail = sessionStorage.getItem('standardizeEmail');
+
     useEffect(() => {
         if (Input_value.length > 0) {
             setIssearch(true);
@@ -51,24 +52,6 @@ function Message({ onClick }) {
             setIssearch(false);
         }
     }, [Input_value]);
-
-    // useEffect(() => {
-    //     get(child(dbRef, `accounts/${standardizeEmail}/message`)).then((snapshot) => {
-    //         if (snapshot.exists()) {
-    //             let arr = [];
-    //             for (let i = snapshot.child('messageList').size - 1; i >= 0; i--) {
-    //                 arr.push({
-    //                     name: snapshot.child('messageList').val()[i].name,
-    //                     time: snapshot.child('messageList').val()[i].time,
-    //                     content: snapshot.child('messageList').val()[i].content,
-    //                     index: i,
-    //                 });
-    //             }
-    //             setMessageList(arr);
-    //         }
-    //     });
-    //     // eslint-disable-next-line
-    // }, []);
 
     useEffect(() => {
         onValue(child(dbRef, `accounts/${standardizeEmail}/message/messageList`), (snapshot) => {
@@ -90,7 +73,13 @@ function Message({ onClick }) {
     }, []);
     return (
         <div className={cx('message')}>
-            <button className={cx('clear')} onClick={onClick}>
+            <button
+                className={cx('clear')}
+                onClick={() => {
+                    onClick();
+                    setContact(false);
+                }}
+            >
                 <i className={cx('fa-solid', 'fa-xmark')}></i>
             </button>
             {!contact && <p className={cx('header')}>Tin nhắn cá nhân</p>}
@@ -132,6 +121,13 @@ function Message({ onClick }) {
                                 content={item.content}
                                 onClick={() => {
                                     setContact(true);
+                                    if (window.screen.width < 723) {
+                                        document.querySelector(`.${stylescontainer.container}`).style.height =
+                                            'calc(100vh - 200px)';
+                                        document.querySelector(`.${stylescontainer.container}`).style.overflow =
+                                            'hidden';
+                                    }
+
                                     setContact_name(item.name);
                                     setContact_index(item.index);
                                     setContact_email(item.email);
@@ -158,6 +154,12 @@ function Message({ onClick }) {
                                     content={item.content}
                                     onClick={() => {
                                         setContact(true);
+                                        if (window.screen.width < 723) {
+                                            document.querySelector(`.${stylescontainer.container}`).style.height =
+                                                'calc(100vh - 200px)';
+                                            document.querySelector(`.${stylescontainer.container}`).style.overflow =
+                                                'hidden';
+                                        }
                                         setContact_name(item.name);
                                         setContact_email(item.email);
                                     }}
@@ -173,6 +175,10 @@ function Message({ onClick }) {
                     email={contact_email}
                     onclickprev={() => {
                         setContact(false);
+                        if (window.screen.width <= 723) {
+                            document.querySelector(`.${stylescontainer.container}`).style.height = 'auto';
+                            document.querySelector(`.${stylescontainer.container}`).style.overflow = 'auto';
+                        }
                     }}
                 />
             )}

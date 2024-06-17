@@ -1,4 +1,6 @@
 import styles from './Header.module.scss';
+import stylescontainer from '../Defaultlayout.module.scss';
+
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react/headless';
 import def from 'src/img/def_old.png'; // with import
@@ -238,7 +240,7 @@ function Header({ Active = true, Private = false, Course = false }) {
                                         notify.style.visibility = 'visible';
                                         boxmess.style.visibility = 'hidden';
                                         boxmess.style.right = '-100%';
-                                        boxmess.style.opacity = 1;
+                                        boxmess.style.opacity = 0;
 
                                         notify.style.scale = 1;
                                         notify.style.opacity = 1;
@@ -389,10 +391,15 @@ function Header({ Active = true, Private = false, Course = false }) {
                                 <Message
                                     onClick={() => {
                                         const boxmess = document.querySelector(`.${cx('box-mess')}`);
-                                        if (boxmess && boxmess.style.visibility == 'visible') {
-                                            boxmess.style.visibility = 'hidden';
-                                            boxmess.style.right = '-100%';
-                                            boxmess.style.opacity = 1;
+
+                                        boxmess.style.visibility = 'hidden';
+                                        boxmess.style.right = '-100%';
+                                        boxmess.style.opacity = 0;
+                                        if (window.screen.width <= 723) {
+                                            document.querySelector(`.${stylescontainer.container}`).style.height =
+                                                'auto';
+                                            document.querySelector(`.${stylescontainer.container}`).style.overflow =
+                                                'auto';
                                         }
                                     }}
                                 />

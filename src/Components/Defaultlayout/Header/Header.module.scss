@@ -157,9 +157,8 @@
         right: -100%;
         padding-top: 10px;
         border: solid 2px rgba(51, 51, 51, 0.1607843137);
-
         opacity: 0;
-        transition: visibility 800ms ease, opacity 800ms ease, right 800ms linear;
+        transition: visibility 1000ms linear, opacity 1000ms linear, right 1000ms linear;
     }
 
     .avatar {
@@ -213,20 +212,6 @@
         &:hover {
             background-color: #ccc;
         }
-    }
-}
-
-@keyframes mess-Out {
-    0% {
-        transform: translateX(100%);
-    }
-
-    60% {
-        transform: translateX(100%);
-    }
-
-    100% {
-        transform: translateX(0%);
     }
 }
 
@@ -332,7 +317,9 @@
             margin-top: 0px;
             height: auto;
             overflow: hidden;
+
             right: 0px !important;
+            transition: visibility 500ms linear, opacity 500ms linear, right 500ms linear;
         }
         .box-notify {
             right: -25px;

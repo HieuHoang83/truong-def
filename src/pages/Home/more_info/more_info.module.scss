@@ -1,3 +1,7 @@
+.cardContainer {
+    overflow: hidden !important;
+    width: 100vw;
+}
 .card {
     position: relative;
     width: 500px;
@@ -9,7 +13,6 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    margin-right: -500px;
     z-index: 111;
     perspective: 1000px;
     box-shadow: 0 0 0 5px #ffffff80;
@@ -20,14 +23,33 @@
         box-shadow: 0 8px 16px #bbe1fa;
         height: 450px;
         width: 500px;
-        margin-right: 10px;
     }
+    &:hover ~ .cardImage {
+        translate: 0px;
+    }
+    &:hover ~ .cardImageDiv {
+        right: -100%;
+    }
+}
+.cardImage {
+    object-fit: cover;
+    height: 400px;
+    width: 450px;
+    z-index: 1;
+    margin-left: 50px;
+    border-radius: 20px;
+    display: inline-block;
+    translate: -500px;
+    transition: translate 0.3s ease-in-out;
 }
 .cardImageDiv {
     display: inline-block;
     margin-left: 80px;
     z-index: 0;
     position: absolute;
+    right: 100px;
+    transition: right 0.3s ease-in-out;
+
     // right: 0;
 }
 .cardTitleOutSide {
@@ -52,21 +74,6 @@
 //     line-height: 1.5;
 // }
 
-.cardImage {
-    object-fit: cover;
-    height: 400px;
-    width: 450px;
-    z-index: 1;
-    margin-left: 50px;
-    border-radius: 20px;
-    display: inline-block;
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover .cardImage {
-    // display: flex;
-    transform: translateX(500px);
-}
 .icon {
     width: 48px;
     fill: #333;
